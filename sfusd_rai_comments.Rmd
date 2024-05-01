@@ -231,7 +231,7 @@ scc <- filter(es_outcomes, Measure == "School Culture-Climate")
 # in different demographic groups to proportions (0-1)
 scc_all <- filter(scc, Group == "Schoolwide") %>%
     select(SCHNAME, subMeasure, SchEnrl, Y1, Y2, Y3, N = Y3_N, 
-           AA_p, AS_p, HI_p, MR_p, WH_p, SES_p) %>% 
+           AA_p, AS_p, HI_p, MR_p, WH_p, SES_p, ELL_p) %>% 
     mutate_at(vars(ends_with("_p")), function(x) x/100)
 
 # Pivot to have different years in rows instead of columns per year
@@ -300,7 +300,7 @@ r.squaredGLMM(scc_mod2)
 
 *Note*: In the original Excel file from the DAC materials, some columns indicate "trends" based on this inter-annual variation over three years of data, for every subgroup of every school, even when those subgroups have as few as 1 respondent. Any statistician the district could consult would probably advise for more caution than interpreting every variation with this few data points as a "trend".
 
-The above is just a very simple model including one demographic variable (proportion of SED). Clearly other differences in school demographics may have a role. But at least, it shows evidence that more of the differences in the raw scores from school to school are explained by socio-economic status of the student population that by any consistent effects the schools themselves could have. 
+The above is just a very simple model including one demographic variable (proportion of SED). Clearly other differences in school demographics may have a role. But at least, it shows evidence that more of the differences in the raw scores from school to school are explained by socio-economic status of the student population than by any consistent effects the schools themselves could have. 
 
 
 ## Reference materials
