@@ -300,39 +300,7 @@ r.squaredGLMM(scc_mod2)
 
 *Note*: In the original Excel file from the DAC materials, some columns indicate "trends" based on this inter-annual variation over three years of data, for every subgroup of every school, even when those subgroups have as few as 1 respondent. Any statistician the district could consult would probably advise for more caution than interpreting every variation with this few data points as a "trend".
 
-The above is just a very simple model including one demographic variable (proportion of SED). Clearly other differences in school demographics may have a role. But at least, it shows evidence that more of the differences in the raw scores from school to school are explained by socio-economic status of the student population that by any consistent effects the schools themselves could have.
-
-Similar analyses could be performed for the two other criteria under the Excellence theme, to try to separate any school effect from the baseline expectations given the socio-economic characteristics of its population. Is this redundant with the separate existence of equity criteria? For one thing, only one of the three criteria that will be combined to produce the Equity index focuses on the socio-economic situation of students in the school, and indirectly so (historical neighborhood opportunity score). But also, the effect of school demographics on each of the three proposed Excellence criteria may not be the same, therefore any attempt to control for socio-economic factors must occur upstream, before those metrics are averaged. If the objective is to measure the effects of a school itself on learning, rather than external factors out of its control (e.g. socio-economic situation of its students), then some analysis needs to be done separately for each of the three criteria. I want to reiterate that I am not an expert in education research, and surely there are good existing models in that field for extracting this information from the raw outcome scores.
-
-As a final point on a different equity-related question: We also have data for subgroups within each school, so it is also possible to see if some schools have unusual differences between subgroups for each criteria. For example, here we could see whether the school culture and climate scores vary between SED students and the overall population within each school. I present that data below, only for Y3 so I can also display the number of respondents (dot size). The two dots for each school are connected by a vertical line for ease of comparison.
-
-```{r, message=FALSE}
-scc_sed_students <- filter(scc, subMeasure == "Students", 
-                           Group %in% c("Schoolwide", "SES")) %>%
-    select(SCHNAME, SchEnrl, Group, Y1, Y2, Y3, N = Y3_N, SES_p) %>% 
-    mutate(Group = recode(Group, SES = "SED"))
-
-ggplot(scc_sed_students, aes(x = SES_p, y = Y3, color = Group)) +
-    labs(x = "Percentage of SED students", 
-         y = "School climate and culture score (%)",
-         color = "Resp. group", size = "Nb. of resp.") +
-    geom_line(aes(group = SCHNAME), color = "black") +
-    geom_point(aes(size = N)) +
-    scale_color_brewer(palette = "Dark2") +
-    theme_cowplot() +
-    theme(axis.title.x = element_text(margin = margin(t = 10)), 
-          axis.title.y = element_text(margin = margin(r = 10)))
-```
-
-Note that because the schoolwide group also includes SED students, we expect the two dots to be closer to each other as the percentage of SED students increases. Also, when considering all three years in a model like the one described above, there is no evidence for consistent "school effects" on the difference between scores given by SED students and the overall student population. In other words, the differences observed in the graph above for Y3 are not consistent over the three years, SED may score above or below the overall population depending on the year. 
-
-```{r, include = FALSE}
-scc_sed_students <- pivot_longer(scc_sed_students, cols = Y1:Y3, names_to = "year", values_to = "value")
-
-scc_mod3 <- lmer(value ~ SES_p * year + Group + (1 + Group|SCHNAME),
-                data = scc_sed_students)
-summary(scc_mod3)
-```
+The above is just a very simple model including one demographic variable (proportion of SED). Clearly other differences in school demographics may have a role. But at least, it shows evidence that more of the differences in the raw scores from school to school are explained by socio-economic status of the student population that by any consistent effects the schools themselves could have. 
 
 
 ## Reference materials
