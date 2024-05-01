@@ -242,7 +242,7 @@ scc_all <- filter(scc_all, SchEnrl > 50)
 
 ```
 
-As the graph below shows, the number of respondents varies widely in year 3, especially for the family category, with even a few large schools having fewer than 10 responses (10 responses is the horizontal dashed line across the graph) or up to 600. Many schools also have few staff respondents. Note that I excluded the Lee Newcomer School due to its very low enrollment.
+As the graph below shows, the number of respondents varies widely in year 3, especially for the family category, with even a few large schools having fewer than 20 responses (20 responses is the horizontal dashed line across the graph) or up to 600. Many schools also have few staff respondents. Note that I excluded the Lee Newcomer School due to its very low enrollment.
 
 ```{r}
 ggplot(scc_all, aes(x = SchEnrl, y = N, color = subMeasure)) + 
