@@ -303,6 +303,57 @@ r.squaredGLMM(scc_mod2)
 The above is just a very simple model including one demographic variable (proportion of SED). Clearly other differences in school demographics may have a role. But at least, it shows evidence that more of the differences in the raw scores from school to school are explained by socio-economic status of the student population than by any consistent effects the schools themselves could have. 
 
 
+## Elementary: Socio-Emotional Development
+
+This metric is defined as "the percentage of students responding favorably to survey questions related to social awareness, self-management, growth mindset, or self-efficacy".
+
+The Socio-Emotional Learning (SEL) survey data for K-5 schools are found in the same dataset as described before in the School Culture and Climate section, and in fact the numbers of respondents in each school match for both surveys (with data missing for the same two schools). 
+
+Unlike for the school climate surveys, here the four indicators (social awareness, self-management, growth mindset, self-efficacy) are reported separately in the data sheet. The four indicators tend to vary together between schools and years (correlation coefficient of 0.55 to 0.86 depending on the pair of indicators considered). Therefore it seems reasonable to use the mean of the four indicators as an overall SEL score as the metric effectively proposes.
+
+```{r, include = FALSE}
+sel <- filter(es_outcomes, Measure_Short == "SEL") %>% 
+    filter(SchEnrl > 50)
+
+sel2 <- sel %>% 
+    filter(Group == "Schoolwide") %>% 
+    select(SCHNAME, subMeasure, SchEnrl, Y1, Y2, Y3, N = Y3_N, 
+           AA_p, AS_p, HI_p, WH_p, ELL_p, SES_p, SPED_p) %>% 
+    pivot_longer(cols = Y1:Y3, names_to = "year", values_to = "value") %>% 
+    pivot_wider(names_from = subMeasure, values_from = value)
+
+cor(sel2[complete.cases(sel2), 12:15])
+
+sel2$meanSEL <- rowMeans(sel2[,12:15])
+```
+
+Just like school culture and climate above, we can look at the variation of SEL score between survey years and as a function of the percentage of socio-economically disadvantaged (SED) students in the school.
+
+```{r, message = FALSE, warning = FALSE}
+ggplot(sel2, aes(x = SES_p, y = meanSEL, color = year)) +
+    labs(x = "Percentage of SED students", 
+         y = "Mean SEL score (%)") +
+    geom_point() +
+    geom_smooth(method = "lm", alpha = 0.2) +
+    scale_color_brewer(palette = "Dark2") +
+    theme_cowplot() +
+    theme(axis.title.x = element_text(margin = margin(t = 10)), 
+          axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+For this metric, the scores also decrease districtwide from Y1 to Y2 and Y3, but not as much as for the school culture and climate. 8% of the variation in the data shown above is due to the districtwide trend, 50% of the variation is explained if we also consider the percentage of SED students in the school, and the addition of school effects (independent of the percentage of SED students) further increases this percentage to 68%.
+
+```{r, include = FALSE}
+sel_mod <- lmer(meanSEL ~ year + (1|SCHNAME), data = sel2)
+r.squaredGLMM(sel_mod)
+
+sel_mod2 <- lmer(meanSEL ~ SES_p * year + (1|SCHNAME), data = sel2)
+r.squaredGLMM(sel_mod2)
+```
+
+In fact, if we put aside the districtwide changes from one year to the next, the two metrics (School Culture and Climate and Socio-Emotional Learning) show a very similar pattern: the percentage of SED students alone explains about 2.5 times as much of the school-to-school variation as any consistent (across years) school effects that remain after controlling for the percentage of SED students. In other words, if the raw percentage scores are used (as the district proposes when explaining the criteria), both criteria will -- redundantly -- reflect the socio-economic composition of the student population much more than they would reflect any particular characteristic of the school itself.
+
+
 ## Reference materials
 
 Here are some useful links to public data made available by the district, some of which is used in this analysis.
