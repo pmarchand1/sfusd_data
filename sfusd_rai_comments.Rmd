@@ -11,6 +11,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 # Load packages
 library(tidyverse)
+library(ggrepel)
 library(cowplot)
 library(sf)
 library(scales)
@@ -147,7 +148,7 @@ As an illustration (not an exact computation of the metric), here is a graph of 
 ```{r, include = FALSE}
 # Data file made from the PDF of assignment requests per seat from SFUSD
 req_seats <- read.csv("req_seats_k.csv")
-for (i in 1:4) req_seats[i] <- str_trim(req_seats[[i]])
+req_seats <- mutate_if(req_seats, is.character, str_trim)
 
 # Remove newcomer schools
 req_seats <- filter(req_seats, Program.Code != "NS")
@@ -444,6 +445,115 @@ ggplot(sbac_all, aes(x = Y1Y2_Diff, y = Y2Y3_Diff, color = Measure_Short)) +
 ```
 
 There are also some major outliers in terms of change between the first two years (differences of +/- 30 to 40% in the proficiency rate at the same school), whereas the changes from Y2 to Y3 are less variable (most within +/- 10%). The problem that emerges then is that with this much inter-annual variability, perhaps accentuated by the COVID-19 pandemic, it is difficult to get a clear picture of systematic growth with few years of data.
+
+
+## Elementary: Family Choice and Demand for School / Enrollment
+
+The metric for family choice and demand for school is defined as "the percentage of applicants ranking the school as one of their top three choices in their
+school application". This information can be obtained readily from the [Annual Assignments Highlights](https://www.sfusd.edu/schools/enroll/student-assignment-policy/annual-assignment-highlights) more specifically the *Main choice results by round* file. 
+
+The graph below shows the number of top 3 requests (rather than the percentage, but it is proportional) for 2024-2025 kindergarten enrollment by school.
+
+```{r, include = FALSE}
+req_seats <- read.csv("req_seats_k.csv")
+req_seats <- mutate_if(req_seats, is.character, str_trim)
+
+req <- read.csv("req.csv")
+req <- mutate_if(req, is.character, str_trim)
+req <- rename(req, School.Name = SchoolName, Program.Code = Code)
+
+req_seats <- inner_join(req_seats, req)
+req_seats$top3 <- req_seats$X1st.Choice + req_seats$X2nd.Choice + req_seats$X3rd.Choice
+
+prog_types2 <- data.frame(
+    Program.Code = c("AF", "AO", "CB", "CE", "CN", "CT", "FB", "GE", "JE", "JN",
+                     "KE", "KN", "ME", "MM", "MN", "MS", "SA", "SB", "SE", "SN", "TC"),
+    Program.Type = c("SP", "SP", "L", "L", "L", "L", "L", "GE", "L", "L",
+                     "L", "L", "L", "SP", "L", "SP", "SP", "L", "L", "L", "L")
+)
+
+req_seats <- inner_join(req_seats, prog_types2)
+req_seats <- group_by(req_seats, School.Name, Program.Type) %>% 
+    summarize(Total.Requests = sum(Total.Requests),
+              Total.Seats = sum(Total.Seats),
+              Total.Assigned = sum(Total.Assigned),
+              top3 = sum(top3))
+
+req_seats_sch <- group_by(req_seats, School.Name) %>% 
+     summarize(Total.Requests = sum(Total.Requests),
+              Total.Seats = sum(Total.Seats),
+              Total.Assigned = sum(Total.Assigned),
+              top3 = sum(top3))
+
+req_seats <- inner_join(req_seats, 
+                        select(req_seats_sch, School.Name, total_top3 = top3))
+
+```
+
+
+```{r, fig.height=8, fig.width=10}
+ggplot(req_seats, aes(x = reorder(School.Name, total_top3), y = top3, fill = Program.Type)) +
+    labs(title = "2024-2025 kindergarten top 3 choices",
+         x = "School", y = "Numbers of top 3 choices", fill = "Pathway") +
+    geom_col(color = "white") +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_brewer(palette = "Dark2", labels = c("General", "Language", "SDC")) +
+    coord_flip() +
+    theme_bw()
+```
+
+The metric for student enrollment is defined as "the school's 2023-2024 school year enrollment compared to its ideal enrollment". I could not find information on "ideal enrollment" by school. In principle, this metric should be related to family demand since schools with high requests should be full.  But it depends how ideal enrollment is defined (building capacity? staffing levels? etc.)
+
+Before obtaining clarity on this point, we could nevertheless look at the assignment demand (here represented as the number of top-3 requests by seat available), the number of seats available and the percentage of those seats assigned by round 1. In the graph below, general education and language enrollments are combined, and SDC enrollments are excluded since they represent much smaller classrooms.
+
+```{r, message=FALSE}
+req_seats_sch2 <- filter(req_seats, Program.Type != "SP") %>% 
+    group_by(School.Name) %>% 
+    summarize(Total.Requests = sum(Total.Requests),
+              Total.Seats = sum(Total.Seats),
+              Total.Assigned = sum(Total.Assigned),
+              frac_assigned = Total.Assigned / Total.Seats,
+              top3 = sum(top3))
+
+req_seats_sch2 <- inner_join(req_seats_sch2, sch_abbr,
+                             by = c("School.Name" = "school"))
+
+ggplot(req_seats_sch2, aes(x = Total.Seats, y = top3 / Total.Seats, 
+                           color = frac_assigned)) +
+    labs(x = "Number of seats", y = "Numbers of top 3 choices / Seat") +
+    geom_point() +
+    geom_text_repel(aes(label = abbr), size = 2, max.overlaps = 20) +
+    scale_color_viridis_c(name = "% seats assigned", option = "magma",
+                          direction = - 1, begin = 0, end = 0.7,
+                          labels = label_percent()) +
+    theme_cowplot(font_size = 12) +
+    theme(axis.title.x = element_text(margin = margin(t = 10)), 
+          axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+This is a somewhat complex figure, but a few notes:
+
+- The number of seats ($x$ axis) is clustered around numbers corresponding to 1, 2, 3, 4 kindergarten classes, not surprisingly. Lau stands out with what looks to be 5 full classes. 
+
+- The most requested schools relative to the number of seats can be found in all school sizes.
+
+- The color scale represents the percentage of seats that were assigned in round 1. It goes above 100% as some schools report more assignments than available seats. Purple, then red colored points represents increasing levels of under-assignment.
+
+- I want to be very clear that the color scale does not represent over/underenrollment necessarily, as these are only Round 1 assignment results.
+
+Here is a different version that shows assignments vs. number of seats available.
+
+```{r, warning = FALSE}
+ggplot(req_seats_sch2, aes(x = Total.Seats, y = Total.Assigned)) +
+    labs(x = "Number of seats", y = "Round 1 assignments") +
+    geom_point() +
+    geom_text_repel(aes(label = abbr), size = 2, max.overlaps = 20) +
+    geom_abline() +
+    theme_cowplot() +
+    theme(axis.title.x = element_text(margin = margin(t = 10)), 
+          axis.title.y = element_text(margin = margin(r = 10)))
+```
+
 
 
 ## Reference materials
