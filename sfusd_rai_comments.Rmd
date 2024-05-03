@@ -38,6 +38,19 @@ Arguably, the district should have explained the concrete definition of the crit
 At least, now that this information is available, it is possible to use those definitions as well as the data made available publicly by the district to get an idea of what the application of these criteria would do in practice. This is the purpose of this page (which is a work in progress, currently limited to a few criteria and to the data regarding elementary schools).
 
 
+## Some major points of concern (tl;dr)
+
+- How exactly SFUSD plans to "combine" the heterogeneous metrics into a single score by school, even with weights from the community survey, remains mysterious.
+
+- It is not clear if all metrics can be computed for all schools (missing data, utility of geographical metric for citywide schools, etc.)
+
+- Grouping all particular programs/pathways into one metric means for example that special education numbers will be overshadowed by the much larger language program enrollment.
+
+- Metrics under school excellence, if left unadjusted, primarily reflect the racial/socio-economic composition of the school rather than anything the school is specifically doing different from other schools.
+
+- The amount of year-to-year variation in the outcome metrics made available to the DAC (perhaps in part due to the pandemic) means that those 3 years of data may not be sufficient for a good measure of school-to-school differences. 
+
+
 ## Overview of the criteria
 
 One slide from town hall #2 in particular illustrates what SFUSD plans to do with the results of this round of feedback (reproduced below).
@@ -361,6 +374,76 @@ I think a common followup question to the discussion above would be: "Sure, the 
 The short answer is no. A longer answer would start by considering that only one of the three metrics under Equity measures the socio-economic composition of the school, and more indirectly than the percentage of SED students (since it is a metric of the neighborhoods, not the students). The current design of the Equity theme, rather, seems to be as a counterweight to the Effective use of resources theme: the latter would favor closing small schools, but the Equity metrics would advocate for keeping small schools if they are far from other schools, if they have particular programs, or if they serve historically disadvantaged neighborhoods.
 
 On a more general level, well-designed metrics should stand on their own, i.e. measure different things and measure the thing they claim to measure. If the metrics used under the Excellence theme are primarily determined by "how poor are students at the school", they are not measuring excellence of the school itself. 
+
+
+## Elementary: Academic Performance
+
+This metric is defined as "state assessments of English Language Arts and Math performance and growth".
+
+The example given in the survey is: "School A has a high performance level and has maintained that level over multiple years. School B has a high performance level and has increased it over multiple years. School B shows greater growth and is less likely to be identified as a candidate for co-location, merger, or closure."
+
+This particular example avoids the question of what to do if one school has higher performance and lower growth or vice versa. The metric as defined is really composed of two metrics with no specification of how to weigh them. It also does not mention over how many years the growth is calculated.
+
+Just as for the previous two metrics, the data for SBAC (California "Smarter Balanced Assessment") proficiency level (% of students meeting or exceeding standard) is provided for English (ELA) and Math for three years (labelled Y1, Y2 and Y3) in the *ES Profiles - Data for Sharing.xlsx* file provided to the DAC. Here, the data is available for all elementary schools. (I still exclude Lee Newcomer School due to the small population.)
+
+As for the previous two metrics, we can fit a simple model to see how much of the variation in SBAC scores between schools and years is explained by student demographics, in this case including not only the percentage of socio-economically disadvantaged students, but also the percentages of Black, Hispanic and Asian students.
+
+```{r, include = FALSE}
+sbac <- filter(es_outcomes, str_detect(Measure_Short, "SBAC")) %>% 
+    filter(SchEnrl > 50)
+
+sbac_all <- filter(sbac, Group == "Schoolwide")
+
+sbac_long <- pivot_longer(sbac_all, cols = Y1:Y3, names_to = "year", values_to = "value")
+
+sbac_ela <- filter(sbac_long, Measure_Short == "SBAC ELA")
+sbac_math <- filter(sbac_long, Measure_Short == "SBAC Math")
+
+sbac_ela_mod1 <- lmer(value ~ year + (1 | SCHNAME), data = sbac_ela)
+r.squaredGLMM(sbac_ela_mod1)
+sbac_ela_mod2 <- lmer(value ~ AA_p + AS_p + HI_p + SES_p + (1 | SCHNAME), 
+                      data = sbac_ela)
+r.squaredGLMM(sbac_ela_mod2)
+sbac_math_mod1 <- lmer(value ~ year + (1 | SCHNAME), data = sbac_math)
+r.squaredGLMM(sbac_math_mod1)
+sbac_math_mod2 <- lmer(value ~ AA_p + AS_p + HI_p + SES_p + (1 | SCHNAME), 
+                       data = sbac_math)
+r.squaredGLMM(sbac_math_mod2)
+```
+
+Unlike the previous metrics, there is no systematic year-to-year variation at the district level. However, the amount of variation between schools explained by demographics alone is greater (86% for ELA and 84% for Math), with an additional 8 to 10% (94% total in both cases) explained by school effects independent of demographics. The graph below shows the actual proficiency scores compared to the expectation from school demographics alone. The dots for each school are connected by a vertical black line to provide a sense of the variation from year to year. Points corresponding exactly to model expectations would be on the diagonal dashed line.
+
+```{r}
+sbac_ela$pred <- predict(sbac_ela_mod2, re.form = ~ 0)
+sbac_math$pred <- predict(sbac_math_mod2, re.form = ~ 0)
+sbac_long_pred <- rbind(sbac_ela, sbac_math)
+
+ggplot(sbac_long_pred, aes(x = pred, y = value, color = year)) +
+    labs(x = "Expectation from demographics", y = "Actual score (% met or exceeded)", color = "Year") +
+    geom_point() + 
+    geom_line(aes(group = SCHNAME), color = "black", alpha = 0.5) + 
+    geom_abline(linetype = "dashed") +
+    facet_wrap(~ Measure_Short) +
+    scale_color_brewer(palette = "Dark2") +
+    theme_cowplot() +
+    theme(axis.title.x = element_text(margin = margin(t = 10)), 
+          axis.title.y = element_text(margin = margin(r = 10)))
+
+```
+
+Considering now the growth portion of the metric, what stands out here is that with three years of data, there is no relationship between the change from Y1 to Y2 and that from Y2 to Y3.
+
+```{r}
+ggplot(sbac_all, aes(x = Y1Y2_Diff, y = Y2Y3_Diff, color = Measure_Short)) +
+    labs(x = "Change from Y1 to Y2", y = "Change from Y2 to Y3", color = "Assessment") +
+    geom_point() +
+    scale_color_brewer(palette = "Dark2") +
+    theme_cowplot() +
+    theme(axis.title.x = element_text(margin = margin(t = 10)), 
+          axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+There are also some major outliers in terms of change between the first two years (differences of +/- 30 to 40% in the proficiency rate at the same school), whereas the changes from Y2 to Y3 are less variable (most within +/- 10%). The problem that emerges then is that with this much inter-annual variability, perhaps accentuated by the COVID-19 pandemic, it is difficult to get a clear picture of systematic growth with few years of data.
 
 
 ## Reference materials
