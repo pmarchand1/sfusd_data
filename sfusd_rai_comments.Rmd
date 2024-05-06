@@ -432,20 +432,52 @@ ggplot(sbac_long_pred, aes(x = pred, y = value, color = year)) +
 
 ```
 
-Considering now the growth portion of the metric, what stands out here is that with three years of data, there is no relationship between the change from Y1 to Y2 and that from Y2 to Y3.
+**EDIT**: A previous version assumed that "growth" as defined in the metric represented the change over time of the SBAC scores for a school. I later found out (from Paul Gardiner's [SFEDup blog](https://sfeducation.substack.com/i/137024258/growth-not-achievement)) that the state is developing a metric for the average growth in SBAC score for a cohort of students at each school, as described [here](https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp). The state released a version of the metric for informational purposes only (to demonstrate the model) in 2021, and the first version that can be used for evaluation will be released in the Fall 2024 based on SBAC data from 2022 to 2024. 
 
-```{r}
-ggplot(sbac_all, aes(x = Y1Y2_Diff, y = Y2Y3_Diff, color = Measure_Short)) +
-    labs(x = "Change from Y1 to Y2", y = "Change from Y2 to Y3", color = "Assessment") +
+```{r, include = FALSE}
+sbac_grow <- read_excel("growthaggr.xlsx") %>% 
+    filter(districtname == "San Francisco Unified", studentgroup == "ALL") %>% 
+    mutate(schoolname = str_replace_all(schoolname, 
+                                        c("San Francisco Public" = "SF Public",
+                                          "Yick Wo" = "Wo (Yick)")),
+           Measure_Short = recode(subject, ela = "SBAC ELA", math = "SBAC Math")) %>% 
+    select(schoolname, Measure_Short, growthscore)
+
+sch1 <- sort(unique(sbac_all$SCHNAME))
+sch2 <- sort(unique(sbac_grow$schoolname))
+sch_match <- data.frame(SCHNAME = sch1, 
+                        schoolname = sch2[match(str_sub(sch1, 1, 5), str_sub(sch2, 1, 5))])
+
+sbac_all <- inner_join(sbac_all, sch_match) %>% 
+    inner_join(sbac_grow)
+sbac_all <- mutate(sbac_all, mean = (Y1 + Y2 + Y3) / 3)
+```
+
+The following graph shows the growth model "non-official" results from the 2021 state model for SFUSD K-5 schools vs. the percentage of socio-economically disadvantaged students.
+
+```{r, message = FALSE}
+ggplot(sbac_all, aes(x = SES_p, y = growthscore, color = Measure_Short)) +
+    labs(x = "Percentage of SED students", y = "Growth score (2021 state model)", color = "Assessment") +
     geom_point() +
+    geom_smooth(method = "lm", alpha = 0.2) +
     scale_color_brewer(palette = "Dark2") +
     theme_cowplot() +
     theme(axis.title.x = element_text(margin = margin(t = 10)), 
           axis.title.y = element_text(margin = margin(r = 10)))
 ```
 
-There are also some major outliers in terms of change between the first two years (differences of +/- 30 to 40% in the proficiency rate at the same school), whereas the changes from Y2 to Y3 are less variable (most within +/- 10%). The problem that emerges then is that with this much inter-annual variability, perhaps accentuated by the COVID-19 pandemic, it is difficult to get a clear picture of systematic growth with few years of data.
+Even though schools with more disadvantaged students show lower growth on average, there is more variation from school to school and this metric is much less correlated with racial and socio-economic composition of the student population (the same demographic variables that explained over 80% of the mean SBAC proficiency rates explain less than 10% of the growth score).
 
+```{r, include = FALSE}
+sbac_gr_mod <- lm(growthscore ~ (AA_p + AS_p + HI_p + SES_p) * Measure_Short, 
+                  data = sbac_all)
+summary(sbac_gr_mod)
+sbac_mean_mod <- lm(mean ~ (AA_p + AS_p + HI_p + SES_p) * Measure_Short, 
+                  data = sbac_all)
+summary(sbac_mean_mod)
+```
+
+However, the first official growth score metric will only be published after SFUSD makes recommendations for school closures. Even if they were to make recommendations based on the 2021 data (which might not be allowed), there is a risk that the one data point for each school may not represent a consistent effect, as only more years of data would tell.
 
 ## Elementary: Family Choice and Demand for School / Enrollment
 
