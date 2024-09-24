@@ -1,3 +1,5 @@
+(Note: The data for the "Historical Inequities" criteria was not made available by the district.)
+
 Identifier fields
 - SCHNO: SFUSD school ID
 - FULLNAME: School name
