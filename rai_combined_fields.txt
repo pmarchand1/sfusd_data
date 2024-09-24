@@ -1,0 +1,66 @@
+Identifier fields
+- SCHNO: SFUSD school ID
+- FULLNAME: School name
+- SCHLEVEL: 2 = elementary, 3 = middle, 4 = high, 6 = K-8
+- ADDRESS: Full address of the school
+
+School Access
+- mean_dist3_mi: Mean distance in miles from a school to three nearest schools in same grade band (ES, MS, HS or K-8)
+(note: for Rooftop and Lilienthal, distances were calculated from the main address in the ADDRESS field)
+(note2: Academy and Asawa share the same address and are counted as one school for this calculation)
+- dens_students_mi2: Student density of ZIP code provided by district, i.e. the number of SFUSD-enrolled students at the school's entry grade level (K, 6 or 9) that live in the same ZIP code as the school, divided by the area of the ZIP code in square miles
+
+Program Access
+- enroll: Total enrollment (2023-2024)
+- enroll_SED: Socio-economically disadvantaged enrollment (2023-2024)
+- enroll_prog: Total unduplicated enrollment (2023-2024) for the program access metric (i.e. # of students in one or more of: English learner, special ed., world language courses, language pathways, career technical ed., AVID courses or socio-economically disadvantaged)
+- SED_frac: enroll_SED as a fraction of enroll
+- prog_frac: enroll_prog as a fraction of enroll (program access metric)
+
+School Culture and Climate
+- staff_cc_favorability: Percentage of favorable staff responses to culture and climate survey 
+- staff_participation: Participation rate of staff
+(same as above but for family responses and student responses)
+- family_cc_favorability
+- family_participation
+- student_cc_favorability
+- student_participation (student participation rate applies to both SCC, and the SEL survey below)
+
+Socio-Emotional Learning
+(percentage of positive responses by students for each of the 4 SEL metrics)
+(note: scores for K-8 schools are the average of the ES and MS values to give one row by school)
+- growth_mindset_fav
+- self_efficacy_fav
+- self_management_fav
+- social_awareness_fav 
+
+Academic Excellence
+(performance scores in ELA and Math for 2022-2023 are calculated from SBAC results and given by California School Dashboard)
+- Performance_ELA 
+- Performance_Math 
+(change in performance for 2022-2023 compared to previous year in ELA and Math, also given in California School Dashboard) 
+- Change_ELA 
+- Change_Math 
+
+
+Family Choice and Demand
+(percentage of applicants to the corresponding entry grade: K, 6 or 9, who listed the school in their top 3; K and 6 grade values were averaged for the K-8 schools to get one row by school)
+- top3_pct_2324
+- top3_pct_2425 
+- top3_pct_2325 
+
+Teacher Turnover
+(note: the # of teachers and departing teachers were added for the ES and MS components of K-8 schools to get one row by school) 
+- num2022: # eligible certificated staff in 2022
+- sep2022: # separations in 2022 
+(same for 2023)
+- num2023 
+- sep2023 
+- turnover_mean: average of turnover rate in 2022 (sep2022/num2022) and 2023 (sep2023/num2023)
+
+Enrollment vs. Capacity
+- prog_cap: School capacity given by the district
+- pct_cap: 2023-2024 total enrollment (enroll column above) divided by prog_cap
+
+Building Condition
+- fci: FCI value (higher = worse condition), was averaged for schools with multiple campuses to get one row by school
