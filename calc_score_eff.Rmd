@@ -255,5 +255,5 @@ reactable(
 ```
 
 
-Allowing for some rounding, all metrics except teacher turnover match within rounding error. For teacher turnover, the results are clearly inconsistent, and I suspect the final calculation was done with 2022-2024 data instead of the 2021-2023 data that was provided this summer. Indeed, looking at the *Composite score primer*, at one point it is mentioned that the calculation would use 2021-2023, but then at a different point it says: "Teacher turnover was averaged across school years 2022-23 and 2023-24."
+Allowing for some rounding, all metrics except teacher turnover match within rounding error. For teacher turnover, the results are clearly inconsistent, and I suspect the final calculation was done with 2022-2024 data instead of the 2021-2023 data that was provided this summer. Indeed, looking at the *Composite score primer*, at one point it is mentioned that the calculation would use 2021-2023, but then at a different point it says: "Teacher turnover was averaged across school years 2022-23 and 2023-24." If this is correct, the fact that the scores change so much when sliding the 2-year window by a year also suggests that it is too short a timescale to compare schools based on their teacher turnover rates.
 
