@@ -1,0 +1,259 @@
+---
+title: "SFUSD RAI - Reproducing the efficiency criteria calculation"
+author: "Philippe Marchand"
+date: "2024-10-14"
+output: 
+    html_document:
+        code_folding: hide 
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Intro - Disclaimers
+
+This page reproduces some of the calculations that went into the composite score used to rank SFUSD schools for closures / mergers. The official description of how this score was calculated can be found in the [Composite score primer](https://drive.google.com/file/d/1hYPK932n-HWLnhpx3qQIXCh9RtBsLUjZ/view?usp=sharing) published by SFUSD. 
+
+The calculations here are based on data obtained through a Public Records Act request in July 2024, and for now they only cover the criteria in the "Efficiency" portion of the score. Three of the four criteria calculated appear to match official numbers (see last section), but the calculations involved in arriving at the same result show potential sources of errors.
+
+This said, I would not focus too much on the specific issues raised here, as these criteria are not even the most determinant for the final score. They were just the easiest ones to reproduce with available data.
+
+Moreover, this is not a criticism of the researchers at the Stanford Graduate School of Education who performed the calculations leading to the official scores. I know they have been provided with very messy / incomplete data by SFUSD, and for some of the missing data, there is really no good way to fill in the blanks in a way that would provide a fair comparison. 
+
+Instead, based on my own experience as a data professional, I would question the premise of this whole exercise, that condensing all those school-level metrics in a single weighted average would immediately reveal the "best" list of schools to close. There are definitely ways in which mathematical modelling could help SFUSD in its resource alignment problem. However, the district would need to move beyond looking at each school's data in isolation, and instead consider a more holistic (system as a whole) approach to evaluate how they're serving populations across the city right now, and what would be the overall impact of a specific closure scenario.
+
+
+## Family choice and demand
+
+First some code to load packages in R, setting the data directory and loading the main school list for RAI. Lee Newcomer School is removed from the analysis since it was already merged with Lau, leaving 101 schools.
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(reactable)
+
+data_dir <- "rai_metrics_july2024"
+schlist <- read.csv(file.path(data_dir, "RAI School List.csv")) %>% 
+    filter(!str_detect(FULLNAME, "Lee"))
+```
+
+The family demand criteria is based on the percentage of all applications at the entry grade level (K, 6 or 9) listing that school as a top-3 choice, over the last two years (2023-2024 and 2024-2025).
+
+```{r}
+demand <- read_excel(file.path(data_dir, "C1 - Demand _ Family Choice (2023 to 2025).xlsx"),
+                     skip = 1)
+colnames(demand) <- c("SCHNO", "FULLNAME", "Grade", "top3_2324", "top3_pct_2324",
+                      "top3_2425", "top3_pct_2425", "top3_2325", "top3_pct_2325")
+
+demand <- left_join(select(schlist, SCHNO, FULLNAME), 
+                    select(demand, SCHNO, FULLNAME, 
+                           top3_pct_2324, top3_pct_2425, top3_pct_2325))
+```
+
+As stated in the *Composite score primer* document: "Data from Mission [Education Center], SF International, Independence, Ida B. Wells, and Downtown were assigned values equal to the district average because these are
+not schools of choice."
+
+
+```{r}
+mean_demand <- mean(demand$top3_pct_2325, na.rm = TRUE)
+no_demand <- str_detect(demand$FULLNAME, 
+                        "Center|International|Wells|Downtown|Independence")
+
+demand$top3_pct_2325[no_demand] <- mean_demand 
+```
+
+After doing this change, there are still two rows in the data for the eight K-8 schools (representing admissions at K and 6th grade). We can average the two to get one row by school. Finally, scores are  standardized to a mean of 0 and standard deviation of 1.
+
+```{r}
+demand <- group_by(demand, SCHNO, FULLNAME) %>% 
+    summarize(top3_pct_2325 = mean(top3_pct_2325)) %>% 
+    ungroup() %>% 
+    mutate(demand_scl = scale(top3_pct_2325)[,1])
+```
+
+Here is a table with the metric (*top3_pct_2325*), its standardized version (*demand_scl*) and the ranks (101 is the highest demand, 1 the lowest). Because the metric is very skewed, as popular high schools and middle schools get a very high % of applications ranking them, the schools without demand data that were set at the mean level end up at rank 72, higher than most elementary schools.
+
+```{r}
+reactable(
+    mutate(demand, top3_pct_2325 = round(top3_pct_2325, 4), demand_scl = round(demand_scl, 3),
+           rank = rank(demand_scl)) %>% 
+        arrange(desc(demand_scl))
+    
+)
+```
+
+
+## Teacher turnover 
+
+We load the teacher turnover data for 2021-2022 and 2022-2023 and remove some rows that are administrative sites or preschool sites. The *num* columns are numbers of teachers by site, *sep* the number of separations, turnover is then the ratio of *sep* and *num*.
+
+```{r}
+turnover <- read_excel(file.path(data_dir, "20240621 Teacher Turnover.xlsx"))
+colnames(turnover) <- c("site_name", "num2022", "sep2022", "turnover2022", 
+                        "num2023", "sep2023", "turnover2023")
+
+turnover <- filter(turnover, !str_detect(site_name, "Admin|SFSD|EES|OST|Pre-K|TK|Total"))
+```
+
+The data is missing school IDs and the names are written differently than in the main school list, so there is a lot of code below just to match the names between this metric and the main list.
+
+```{r}
+# data is missing school IDs, so taking the first word of the school name
+#  (minus very common words) to try to match the two lists
+match_names <- schlist$FULLNAME %>% 
+    str_replace("^SF |The |New |El ", "") %>%
+    str_split(" ") %>% 
+    map_chr(1) %>% 
+    str_replace_all(c("Mc" = "Mc ", "Chin$" = "Chin ", "Wo" = "Wo "))
+match_matrix <- outer(turnover$site_name, match_names, FUN = str_detect)
+no_matches <- rowSums(match_matrix) == 0
+turnover <- turnover[!no_matches, ]
+match_matrix <- match_matrix[!no_matches, ]
+# remove ambiguous matches
+dup_matches <- outer(rowSums(match_matrix) > 1, colSums(match_matrix) > 1, "&") 
+match_matrix <- match_matrix & !dup_matches
+match_col <- apply(match_matrix, 1, function(x) which(x)[1])
+# fill in missing values manually
+match_col[c(65, 66, 69, 70, 91, 97, 99, 100)] <- c(31, 71, 36, 87, 25, 86, 60, 76)
+turnover$SCHNO <- schlist$SCHNO[match_col]
+turnover <- inner_join(select(schlist, SCHNO, FULLNAME), turnover)
+```
+
+There are a few schools split into two rows. We can sum the numbers into one row, then calculate the mean of the 2021-2022 and 2022-2023 turnover rates for each school, and finally standardize the metric. 
+
+```{r}
+turnover <- turnover %>% 
+    replace_na(list(sep2022 = 0, sep2023 = 0)) %>% 
+    group_by(SCHNO, FULLNAME) %>% 
+    summarize(num2022 = sum(num2022), sep2022 = sum(sep2022), 
+              num2023 = sum(num2023), sep2023 = sum(sep2023)) %>% 
+    ungroup() %>% 
+    mutate(turnover_mean = ((sep2022/num2022) + (sep2023/num2023))/2) %>% 
+    # minus scale when scaling because turnover is a negative attribute
+    mutate(turnover_scl = -scale(turnover_mean)[,1])
+```
+
+
+```{r}
+reactable(
+    mutate(turnover, turnover_mean = round(turnover_mean, 4), 
+           turnover_scl = round(turnover_scl, 3), rank = rank(turnover_scl)) %>% 
+        arrange(desc(turnover_scl))
+    
+)
+```
+
+
+## Student enrollment
+
+Note that this metric was originally defined as "the number of students attending a school as a percentage of the school's ideal capacity, but according to the *Composite score primer*, it was calculated as "the average
+capacity of each school minus the total enrollment". (In fact, it must be enrollment - capacity, since we want over-enrolled schools to score better.) In any case, we can expect that using the difference rather than the ratio of enrollment and capacity will lead to more extreme values (positive or negative) for high schools, which have larger capacities and populations.
+
+Some schools (Downtown, Independence, Wells) are missing from the capacity data provided by SFUSD, so we can assume the metric was set to the mean value for them. In order to match the partial published data (see last section), we must also assume SF International High School is missing even if there is a line (without school ID) in the file with the name "SFIHS".
+
+```{r}
+cap <- read_excel(file.path(data_dir, "C3 - School Site Program Capacity.xlsx")) %>% 
+    rename(SCHNO = idSchool) 
+# missing Downtown, Independence, Wells
+# SFIHS must be international high school, but to match the published results we have to ignore that
+#cap$SCHNO[cap$SchoolName == "SFIHS"] <- 621
+cap <- filter(cap, !is.na(SCHNO))
+```
+
+
+Also, all K-8 schools except Lilienthal have two rows in the data (example below). It seems clear that the row "ES" is for the elementary capacity only and the row "K-8" is the total capacity, and the latter is the correct figure for comparing to total K-8 enrollment.
+
+```{r}
+reactable(
+    filter(cap, str_detect(SchoolName, "Yu|Carm|Roof"))
+)
+```
+
+However, to reproduce the published data at the end of this page, it seems necessary to compare K-8 enrollment to the *average* of the two listed capacities. It is likely a mistake that would lead those K-8 schools to appear more full (or over-full) than they are in the final calculation.
+
+
+```{r}
+cap <- group_by(cap, SCHNO, SchoolName) %>% 
+    summarize(prog_cap = mean(`Program Capacity`)) %>% 
+    ungroup()
+```
+
+In any case, to calculate the metric, we can combine the capacity data with the enrollment data from CBEDS2023, calculate the difference between enrollment and standardize.
+
+```{r}
+prog <- read_excel(file.path(data_dir, "A2 B3 New3 - School Closures Analysis Data Request 20240710.xlsx"),
+                   sheet = "CBEDS2023 Enrollment") %>% 
+    select(SCHNO = `School ID`, FULLNAME = `School Name`, enroll = `Total Enrollment`) %>% 
+    mutate(SCHNO = as.integer(SCHNO)) %>% 
+    semi_join(schlist)
+
+cap <- left_join(prog, select(cap, -SchoolName)) %>% 
+    mutate(over_cap = enroll - prog_cap) %>% 
+    mutate(over_cap = replace_na(over_cap, replace = mean(over_cap, na.rm = TRUE))) %>% 
+    mutate(enroll_scl = scale(over_cap)[, 1]) 
+
+reactable(
+        mutate(cap, enroll_scl = round(enroll_scl, 3), rank = rank(enroll_scl)) %>% 
+        arrange(desc(enroll_scl))
+)
+```
+
+
+## Building condition
+
+This calculation is simpler. We take the FCI data provided by SFUSD, standardize it with a negative sign (higher FCI is worse building condition) and then average the standardized scores for schools with multiple campuses. (Note: I would have expected the averaging of multiple campuses to occur before standardizing, but it matches the published scores better this way.)
+
+```{r}
+fci <- read_excel(file.path(data_dir, "C4 Updated - FCI by Sites (with School Code).xlsx"))
+
+fci <- select(fci, SCHNO = school_no, fci = overall_campus_fci) %>%
+    inner_join(schlist) %>% 
+    mutate(building_scl = -scale(fci)[,1]) %>% 
+    group_by(SCHNO, FULLNAME) %>% 
+    summarize(building_scl = mean(building_scl)) %>% 
+    ungroup()
+
+reactable(
+        mutate(fci, building_scl = round(building_scl, 3), rank = rank(building_scl)) %>% 
+        arrange(desc(building_scl))
+)
+```
+
+## Verify with published data
+
+Although SFUSD never published the full breakdown of composite scores, a slide with the different components for a few schools at the top of the list was shared by a parent attending a SFUSD presentation. Here is that partial dataset.
+
+
+```{r}
+rai_part <- read.csv("rai_scores_partial_list.csv")
+
+reactable(rai_part[1:13])
+```
+
+Let's check our calculated scores for those 9 schools against the reference numbers.
+
+```{r}
+# Combine all 4 score datasets
+eff_scores <- select(demand, SCHNO, FULLNAME, demand_scl) %>% 
+    inner_join(select(turnover, SCHNO, turnover_scl)) %>% 
+    inner_join(select(cap, SCHNO, enroll_scl)) %>% 
+    inner_join(fci)
+
+# Combine with partial released scores for 9 schools
+rai_part_eff <- select(rai_part, schno, school, demand, turnover, enroll, building) %>% 
+    inner_join(select(eff_scores, -FULLNAME), by = c("schno" = "SCHNO"))
+
+reactable(
+    mutate(rai_part_eff, demand_calc = round(demand_scl, 3), turnover_calc = round(turnover_scl, 3),
+           enroll_calc = round(enroll_scl, 3), building_calc = round(building_scl, 3)) %>% 
+        select(schno, school, demand, demand_calc, turnover, turnover_calc, 
+               enroll, enroll_calc, building, building_calc)
+)
+```
+
+
+Allowing for some rounding, all metrics except teacher turnover match within rounding error. For teacher turnover, the results are clearly inconsistent, and I suspect the final calculation was done with 2022-2024 data instead of the 2021-2023 data that was provided this summer. Indeed, looking at the *Composite score primer*, at one point it is mentioned that the calculation would use 2021-2023, but then at a different point it says: "Teacher turnover was averaged across school years 2022-23 and 2023-24."
+

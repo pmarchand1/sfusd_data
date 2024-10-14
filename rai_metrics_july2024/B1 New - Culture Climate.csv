@@ -1,0 +1,124 @@
+schno,school,staff_cc_favorability,staff_participation,family_cc_favorability,family_participation,student_cc_favorability,student_participation
+404,Giannini MS,73,0.991,93,0.126,62,0.937
+405,Lincoln HS,64,0.593,76,0.062,58,0.283
+413,Alamo ES,75,0.882,97,0.438,73,0.946
+420,Alvarado TK & ES,89,0.897,95,0.304,73,0.915
+431,Aptos MS,67,1,90,0.317,59,0.775
+435,Argonne ES,93,0.684,96,0.396,78,0.957
+439,Balboa HS,75,1,90,0.215,58,0.638
+441,Access SFUSD: Bay Street,,,,0,,0
+442,Access SFUSD: The Arc,,,,0,,0
+449,Carmichael Pre-K & TK & K-8,52,0.557,81,0.177,49,0.846
+453,Harte Pre-K & TK & ES,80,0.825,93,0.131,69,0.889
+456,Bryant Elementary Pre-K & ES,76,0.513,96,0.149,73,0.795
+466,Independence HS,91,1,93,0.194,79,0.715
+476,Lee Newcomer ES,,1,,0.25,100,0.2
+478,Clarendon ES,88,0.8,97,0.39,76,0.88
+479,Lilienthal Alt K8,80,0.836,91,0.283,72,0.627
+481,Cleveland ES,69,1,98,0.407,58,0.982
+482,Civic Ctr MS CCS,,,,0,100,0.167
+483,Civic Ctr HS CCS,76,0.75,,0,62,0.216
+485,Yu (A.F.) Alt K8,94,0.907,98,0.279,70,1
+488,Sloat ES,85,0.882,96,0.181,76,0.914
+490,Lau Pre-K & ES,92,0.679,97,0.102,67,0.712
+493,S.F. Community ES,61,1,92,0.445,66,1
+497,Webster ES,71,0.61,82,0.159,88,0.168
+505,Milk (Harvey) ES,83,0.737,89,0.209,79,0.812
+507,Drew Pre-K & TK & ES,77,0.75,,0.083,53,0.878
+509,Chinese Immersion ES,89,1,94,0.397,61,0.974
+513,Taylor Pre-K & ES,73,0.901,97,0.303,64,0.922
+521,El Dorado ES,61,0.826,98,0.259,72,1
+525,Cobb Pre-K & ES,94,0.788,,0.071,73,0.917
+529,Everett MS,39,0.886,78,0.397,44,0.609
+537,Huerta Pre-K & ES,89,0.841,96,0.387,71,0.928
+539,Feinstein ES,73,0.6,85,0.212,76,0.929
+544,Key ES,94,1,97,0.626,72,0.989
+546,Francisco MS,69,0.758,93,0.082,52,0.829
+549,McCoppin ES,96,0.778,98,0.496,75,0.887
+559,Galileo HS,63,0.679,85,0.075,59,0.523
+562,Garfield ES,86,0.903,100,0.201,67,0.833
+569,Peabody ES,96,1,98,0.172,76,1
+571,Washington HS,79,1,84,0.134,58,0.749
+575,Glen Park ES,79,0.7,95,0.312,59,0.958
+589,Grattan Pre-K & ES,85,0.559,96,0.102,74,0.893
+593,Guadalupe Pre-K & ES,83,1,99,0.74,69,0.989
+603,Chavez Pre-K & ES,81,0.875,92,0.251,67,0.805
+607,Hoover MS,72,0.782,84,0.146,51,0.702
+614,Hillcrest ES,60,0.854,92,0.08,63,0.38
+616,Hilltop CAO,98,1,,0.067,71,0.409
+618,Buena Vista/ Mann K8,84,0.519,96,0.078,66,0.792
+621,S.F International HS,81,0.828,97,0.184,70,0.672
+625,Carver ES,76,0.778,100,0.309,62,0.724
+632,Denman MS,67,0.919,90,0.404,54,0.801
+634,Lick MS,56,0.969,87,0.035,52,0.4
+638,Parker ES,95,1,100,0.567,65,1
+644,Jefferson ES,85,0.894,91,0.322,74,0.974
+650,Muir Pre-K & ES,85,0.949,99,0.312,70,0.859
+651,O'Connell HS,70,0.468,,0.027,60,0.43
+656,Serra ES,82,0.478,83,0.138,62,0.905
+664,Lafayette ES,88,0.804,95,0.333,84,0.907
+670,Lakeshore ES,77,0.653,94,0.317,74,0.362
+676,Lawton Alt K8,86,0.614,100,0.143,66,1
+680,Flynn TK & ES,67,0.623,85,0.203,72,0.648
+691,Longfellow ES,78,0.792,95,0.862,71,0.705
+697,Lowell HS,86,1,86,0.146,68,0.932
+708,Marina MS,65,0.824,81,0.402,55,0.669
+710,King Jr. (M.L.) MS,66,1,94,0.331,51,0.813
+714,Marshall (J.W.) ES,76,0.682,88,0.216,65,0.865
+718,McKinley ES,89,0.96,97,0.395,78,0.837
+722,Miraloma ES,71,0.829,92,0.212,80,0.917
+723,Moscone ES & Las Americas Pre-K,87,0.963,97,0.244,68,0.935
+724,Mission Ed Center Pre-K & ES,89,1,98,0.75,62,0.944
+725,Mission HS,72,0.993,85,0.413,59,0.773
+729,Monroe ES,87,0.772,96,0.117,68,0.6
+735,New Traditions ES,87,1,86,0.348,84,0.92
+742,Downtown HS,87,1,93,0.258,67,0.672
+743,Wells HS,75,1,99,0.378,69,0.803
+746,Ortega Pre-K & ES,85,0.971,90,0.24,68,0.935
+750,Sunset ES,89,1,97,0.733,77,0.945
+757,Jordan Sch for Equity HS,74,1,,0.069,67,0.698
+760,Revere Pre-K & K-8,52,0.833,98,0.094,65,1
+764,Burton HS,75,1,93,0.382,62,0.594
+778,Presidio MS,72,0.766,89,0.48,63,0.88
+782,Stevenson TK & ES,89,0.9,97,0.722,73,0.962
+785,Wallenberg HS,86,0.882,93,0.16,62,0.691
+786,Parks ES & Raphael Weill Pre-K,75,0.97,91,0.605,55,1
+790,Redding TK & ES,76,0.52,,0.033,63,0.851
+796,Rooftop Pre-K & K-8,78,1,90,0.485,64,1
+797,Roosevelt MS,85,0.605,94,0.383,65,0.796
+801,Wo (Yick) ES,84,0.567,93,0.468,79,0.491
+814,SF Public Montessori Pre-K & ES,89,1,94,0.821,78,0.97
+815,Asawa SF HS of the Arts,71,0.486,88,0.273,71,0.631
+816,Sanchez Pre-K & ES,77,0.911,95,0.424,59,0.876
+820,Sheridan Pre-K & TK & ES,94,1,100,0.129,76,0.84
+823,Sherman ES,78,0.829,85,0.198,67,0.618
+830,Malcolm X Pre-K & ES,78,0.963,,0.017,64,0.833
+832,Acdmy Arts & Science HS,81,1,91,0.38,67,0.869
+834,Spring Valley ES,88,0.593,98,0.149,60,0.863
+838,King Pre-K & ES,76,0.895,,0,69,0.913
+842,Sunnyside ES,87,0.789,98,0.181,66,0.942
+848,Sutro ES,94,0.848,100,0.465,71,0.897
+853,Marshall HS,73,0.753,98,0.125,61,0.692
+858,Brown Jr (Willie) MS,68,0.702,94,0.203,60,0.749
+859,Tenderloin Pre-K & TK & ES,64,1,79,0.677,62,0.851
+862,Ulloa TK & ES,96,0.933,95,0.247,67,0.834
+867,Visitacion Valley ES,79,0.759,96,0.625,53,0.815
+868,Visitacion Valley MS,62,0.44,,0.04,56,0.877
+872,Chin ES,100,1,99,1,76,1
+876,West Portal ES,84,0.75,88,0.266,67,0.942
+892,Woodside CJC,,0.667,,0,58,1
+903,Argonne Pre-K & TK,94,1,96,0.704,,
+910,Havard Pre-K & TK,85,0.76,97,0.587,,
+915,Stockton Pre-K & TK,95,1,98,1,,
+923,Theresa Mahler Pre-K,,0.6,99,1,,
+928,Noriega Pre-K & TK,97,1,99,0.863,,
+948,Jefferson Pre-K,,0.471,,0.273,,
+950,McLaren Pre-K & TK,85,0.435,,0.333,,
+955,Serra Pre-K & TK,86,0.778,100,0.609,,
+965,Zaida T. Rodriguez Pre-K & TK,96,0.786,92,0.5,,
+987,San Miguel Pre-K,78,1,99,0.8,,
+997,Tule Elk Park Pre-K & TK,91,1,98,0.983,,
+4581,C.A.R.E. Bayview,75,,93,1,,
+4582,C.A.R.E. Buchanan,89,,,0,,
+4583,Youth Chance High School,93,,,0.8,,1
+4584,C.A.R.E. MS,,,,0,,

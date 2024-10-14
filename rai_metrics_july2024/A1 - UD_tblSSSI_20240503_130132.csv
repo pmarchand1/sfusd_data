@@ -1,0 +1,327 @@
+SCHNO,FULLNAME,SCHNAME,ADDRESS,ZIPCODE,ZIPCODE2,City,State,PHONE,PRINCIPAL,Fax,Email,SCHLEVEL,MARKCYCLE,BEGGRADE,ENDGRADE,E,M,H,K8,CDS_COUNTY,CDS_DISTRICT,CDS_SCHOOL,SHORTNAME,NcesId,SchoolOpenClose,SchoolStartTime,SchoolEndTime,Zone,Charter
+853,"Marshall (Thurgood) HS",,"45 Conkling St",94124,,"San Francisco",CA,4156955612,"Ballard-Hanson, Sarah",4156955438,sch853@sfusd.edu,4,6,8,"5th YR Senior",N,N,Y,N,38,68478,3830403,,03976,Y,0,11,HS1,N
+816,"Sanchez ES",,"325 Sanchez St",94114,,"San Francisco",CA,4152416380,"Marin, Ann",4155226729,sch816@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041545,,05664,Y,1,1,C1,N
+086,"NPS - Oak Hill School",,"300 Sunny Hills Dr Apt Bldg6 7",94960,,"San Anselmo",CA,4153317601,,4154577620,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+921,"Las Americas EES",,"801 Treat Ave",94110,,"San Francisco",CA,4156955746,"Twiest, Sarah",,,1,,PK,PK,N,N,N,N,38,68478,0117580,,13328,Y,1,1,EE,N
+095,"NPS - California School for the Deaf",,"39350 Gallaudet Dr",94538,2308,Fremont,CA,5107943666,,5107943797,svirnig@csdf-cde.ca.gov,5,,PK,Unknown,N,N,N,N,38,10389,0000002,,10347,Y,1,1,,N
+997,"Tule Elk Park EES",,"2110 Greenwich St",94123,,"San Francisco",CA,4157493551,"Lambert, Nancy",,,1,3,TK,PK,N,N,N,N,38,68478,0117523,,12583,Y,1,1,EE,N
+158,"NPS - Devereux Texas Treatment Center",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+543,"Five Keys Charter HS ","Five Key","1 Moreland Dr",94066,,"San Francisco",CA,4157343310,,4157343314,steveg@5keyscharter.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0101774,"Five Key",11407,Y,1,6,,Y
+559,"Galileo HS",,"1150 Francisco St",94109,,"San Francisco",CA,4157493430,"Avila, Peter",4157712322,sch559@sfusd.edu,4,6,8,"5th YR Senior",N,N,Y,N,38,68478,3831765,,05612,Y,0,10,HS1,N
+192,"NPS - Achieve, Inc.",,"3860 Middlefield Rd",94303,4716,"Palo Alto",CA,6504941200,,6504941243,tdreschler@achievekids.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+442,"Access SFUSD: The Arc",,"1520 Howard St",94102,,"San Francisco",CA,4152416435,"Schinella, Kara",,,5,,"5th YR Senior","5th YR Senior",N,N,N,N,38,10389,6069561,,10647,Y,1,1,HS2,N
+911,"Bryant EES",,"1060 York St",94110,,"San Francisco",CA,4156955784,"Codicetti, Laura",4156955425,,1,,PK,PK,N,N,N,N,38,68478,6040778,,05592,Y,1,1,EE,N
+126,"NPS - Children's Learning Center-Middle/High School Program",,"1910 Central Av",94501,,Alameda,CA,5107697100,,5107691824,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+182,"NPS - Diamond Ranch Academy",,"433 S Diamond Ranch Pkwy",84737,,Hurrican,UT,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+195,"NPS - Mountain Valley School-Nevada City",,"10591 Milhous Dr",95959,,"Nevada City",CA,5302659057,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+133,"NPS - Cherry Gulch",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+051,"NPS - The Bridge School",,"545 EUCALYPTUS Av",94010,,HILLSBOROURGH,CA,6506967295,,6503427598,,5,,TK,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+517,"Edison K-8 Charter Academy ",,"3531 22nd St",94114,,"San Francisco",CA,4156955848,,4159700344,,6,,TK,8,N,N,N,Y,38,68478,6040935,,,Y,0,7,,Y
+151,"NPS - Seneca Family of Agencies: Catalyst Academy",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+167,"NPS - The Help Group: Summit View",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+565,"Gateway HS Charter",,"1430 Scott St",94115,,"San Francisco",CA,4157493600,,4157492716,,4,,9,"5th YR Senior",N,N,Y,N,38,68478,3830437,,07725,Y,1,6,,Y
+168,"NPS - The Help Group: STEM3 Academy",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+923,"Mahler (Theresa S) EES",,"990 Church St",94114,,"San Francisco",CA,4156955871,"Uwakah, Ugonma",,,1,,PK,PK,N,N,N,N,38,68478,0117572,,13281,Y,1,1,EE,N
+797,"Roosevelt MS",,"460 Arguello Blvd",94118,,"San Francisco",CA,4157508446,"Leicham, Emily",4157508455,sch797@sfusd.edu,3,3,6,8,N,Y,N,N,38,68478,6059901,,05662,Y,0,8,MS,N
+607,"Hoover (Herbert) MS",,"2290 14th Ave",94116,,"San Francisco",CA,4157592783,"Smith, Adrienne",4157592881,sch607@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6059851,,05624,Y,0,10,MS,N
+509,"Chinese Immersion School at DeAvila ES",,"1250 Waller St",94117,,"San Francisco",CA,4152416325,"Yee, Mia",4152416540,sch509@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,0120386,,12487,Y,1,1,C2,N
+484,"City Arts and Leadership HS Charter",,"0325 La Grande Av",94112,,"San Francisco",CA,4158412200,,4158412200,info@es-cat.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0107300,,11408,Y,1,6,,Y
+796,"Rooftop K-8",,"500 Corbett Ave",94114,,"San Francisco",CA,4155226757,"Kawaii, DarrenAnthony",4155226763,sch7961@sfusd.edu,6,9,TK,8,N,N,N,Y,38,68478,6089775,,05661,Y,0,6,C4,N
+941,"Chavez (Cesar) PreK",,"825 Shotwell St",94110,,"San Francisco",CA,4156955765,"Dowdle, Lindsay",4156955843,,1,,PK,PK,N,N,N,N,38,68478,6041149,,05623,Y,1,1,EE,N
+152,"NPS - Seneca Family of Agencies: Maya Angelou",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+914,"SF Montessori EED",,"2340 Jackson St",94115,,"San Francisco",CA,4157493544,"Benitez, Monette",,,1,,PK,PK,N,N,N,N,38,68478,0123117,,12788,Y,1,1,EE,N
+924,"Early Start Program",,"1098 Harrison St",94103,,"San Francisco",CA,4153557735,,,,5,,Infant,Unknown,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+172,"NPS - North Valley School, Redding",,"855 Canyon Rd",96001,5544,Redding,CA,5302321406,,5303780857,bdeshais@victor.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+750,"Sunset ES",,"1920 41st Ave",94116,,"San Francisco",CA,4157592760,"Tong, Rosina",4157592729,sch750@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6113997,,06556,Y,1,1,C5,N
+456,"Bryant ES",,"2641 25th St",94110,,"San Francisco",CA,4156955780,"Codicetti, Laura",4152060538,sch456@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040778,,05592,Y,1,1,C1,N
+134,"NPS - Change Academy at Lake of the Ozarks (CALO)",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+513,"Taylor (Edward R) ES",,"423 Burrows St",94134,,"San Francisco",CA,4153301530,"Norris, David",4154681742,sch513@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040943,,05604,Y,1,1,C4,N
+156,"NPS - Telos Academy",,"870 W Center St",84057,,Orem,UT,8014268800,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+413,"Alamo ES",,"250 23rd Ave",94121,,"San Francisco",CA,4157508456,"Fong, Rosa",4157508434,sch413@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040695,,05582,Y,1,1,C1,N
+539,"Feinstein (Dianne) ES",,"2550 25th Ave",94116,,"San Francisco",CA,4156158460,"Zaki, Salwa",4152422532,sch539@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,0111427,,11772,Y,1,1,C5,N
+680,"Flynn (Leonard R) ES",,"3125 Cesar Chavez St",94110,,"San Francisco",CA,4156955770,"Rodriguez, Luis",4156955837,sch680@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041347,,05640,Y,1,1,C1,N
+993,"21st Century PreK (closed)",,"2055 Silver Av",94124,,"San Francisco",CA,4156955453,,,,,,,,N,N,N,N,38,68478,6041032,,,Y,,,,N
+644,"Jefferson ES",,"1725 Irving St",94122,,"San Francisco",CA,4157592821,"Berger, Craig",4157592806,sch644@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041230,,05631,Y,1,1,C5,N
+135,"NPS - Children's Health Council (Formerly Esther B. Clark School)",,"650 Clark Way",94304,,"Palo Alto",CA,6503265530,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+987,"San Miguel EES",,"300 Seneca Ave",94112,,"San Francisco",CA,4154694756,"Tong, Anita",,,1,,PK,PK,N,N,N,N,38,68478,0117481,,13548,Y,1,1,EE,N
+888,"Online Learning Program (Closed)",,"555 Franklin St",94102,,"San Francisco",CA,4152416000,"Chu, Shann",,olp@sfusd.edu,,,,,N,N,N,N,38,68478,3868478,,,Y,,,,N
+952,"Muir (John) PreK",,"380 Webster St",94117,,"San Francisco",CA,4152416335,"Liebert, Sara",,,1,,PK,PK,N,N,N,N,38,68478,6041255,,05633,Y,1,1,EE,N
+164,"NPS - The Help Group: Young Learners",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+872,"Chin (John Yehall) ES",,"350 Broadway St",94133,,"San Francisco",CA,4152917946,"Lee, Allen",4152917943,sch872@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6113252,,05369,Y,1,1,C2,N
+109,"NPS - Pacific Autism Center for Education","Pacific Autism Ctr","1880 PRUNERIDGE Av",95050,,"SANTA CLARA",CA,4802453400,,4082607267,,5,,K,Unknown,N,N,N,N,38,10389,0000001,"Pacific Autism Ctr",,Y,1,1,,N
+108,"NPS - Creative Learning Center",,"815 Allerton St",94063,1360,"Redwood City",CA,6503858381,,,admin1@clcsped.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+778,"Presidio MS",,"450 30th Ave",94121,,"San Francisco",CA,4157508435,"Chui, Kevin",4157508445,sch778@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6062079,,05657,Y,0,8,MS,N
+801,"Wo (Yick) ES",,"2245 Jones St",94133,,"San Francisco",CA,4157493540,"Sanchez, Alfred",4157493543,sch801@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041131,,08967,Y,1,1,C2,N
+996,"Rooftop PreK","Rooftop EES","433 Burnett St",94131,,"San Francisco",CA,4156955691,"Kawaii, DarrenAnthony",,,1,,PK,PK,N,N,N,N,38,68478,6089775,"Rooftop EES",05661,Y,1,1,EE,N
+420,"Alvarado ES",,"625 Douglass St",94114,,"San Francisco",CA,4156955695,"Sadja, Sheera",4156955447,sch420@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040703,,05583,Y,1,1,C1,N
+187,"NPS - Solstice RTC/Fernwood Academy",,"1904 W Gordon Ave",84041,,Layton,UT,8014440794,,,dan@solsticertc.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+050,"NPS - Families First, Inc.",,"2100 Fifth St",95616,,Davis,CA,5307473400,,5307530398,nps@emqff.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+479,"Lilienthal (Claire) K-8",,"3630 Divisadero St",94123,,"San Francisco",CA,4157493516,"Dhillon, Primal",4157493431,sch479@sfusd.edu,6,7,K,8,N,N,N,Y,38,68478,6102479,,07841,Y,0,7,C4,N
+724,"Mission Education Center ES",,"1670 Noe St",94131,,"San Francisco",CA,4156955313,"Llewelyn-Vasquez, Carla",4156955339,sch724@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6089585,,05649,Y,1,1,C2,N
+441,"Access SFUSD: Bay Street",,"416 Bay St",94133,,"San Francisco",CA,4159265250,"Schinella, Kara",,,5,,"5th YR Senior","5th YR Senior",N,N,N,N,38,10389,6069561,,10647,Y,1,1,HS2,N
+830,"Malcolm X Academy ES",,"350 Harbor Rd",94124,,"San Francisco",CA,4156955950,"Fitzsimons, Matthew",4156471647,sch830@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041586,,05669,Y,1,1,C3,N
+928,"Noriega EES",,"1775 44th Ave",94122,,"San Francisco",CA,4157592853,"Ng, Ivy",,,1,3,TK,PK,N,N,N,N,38,68478,0117473,,13231,Y,1,1,EE,N
+022,"NPS - Sterne (CLOSED)",,"2690 Jackson St",94115,,"San Francisco",CA,4159226081,,,,5,,K,Unknown,N,N,N,N,38,10389,0000000,,,Y,1,1,,N
+431,"Aptos MS",,"105 Aptos Ave",94127,,"San Francisco",CA,4154694520,"Roseboro, Dimitric",4153339038,sch431@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6062020,,05585,Y,0,8,MS,N
+058,"NPS - Anova Center For Education, San Rafael",,"0150 Lovell Av",94903,,"San Rafael",CA,7075277032,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+181,"NPS - Arbor Bay",,"1017 Cedar St",94070,3862,"San Carlos",CA,6502441519,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+435,"Argonne ES",,"680 18th Ave",94121,,"San Francisco",CA,4157508460,"Levison, Rebecca",4157508462,sch435@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040737,,05586,Y,1,1,C2,N
+569,"Peabody (George) ES",,"251 6th Ave",94118,,"San Francisco",CA,4157508480,"Vroegh, Willem",4157508487,sch569@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041065,,05614,Y,1,1,C3,N
+992,"Tenderloin PreK",,"627 Turk St",94102,,"San Francisco",CA,4157493567,"Lister, Paul",,,1,,PK,PK,N,N,N,N,38,68478,6115901,,07732,Y,1,1,EE,N
+868,"Visitacion Valley MS",,"1971 Visitacion Ave",94134,,"San Francisco",CA,4154694590,"Baker, Maya",4154694703,sch868@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6059919,,05678,Y,0,9,MS,N
+148,"NPS - Normative",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+029,"NPS - Deverex Foundation",,"7055 Seaway Dr",93117,,Goleta,CA,8059682525,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+945,"Parker (Jean) EED OST",,"840 Broadway St",94133,,"San Francisco",CA,4152917967,"Yu, Jenny",,,1,,PK,PK,N,N,N,N,38,68478,6041206,,05630,Y,1,1,EE,N
+814,"SF Public Montessori ES",,"2340 Jackson St",94115,,"San Francisco",CA,4157493730,"Benitez, Monette",4157493494,https://www.sfusd.edu/school/san-francisco-public-montessori-elementary-school,2,3,K,5,Y,N,N,N,38,68478,0123117,,12788,Y,1,1,C2,N
+485,"Yu (Alice Fong) K-8",,"1541 12th Ave",94122,,"San Francisco",CA,4157592764,"Szeto, Liana",4152422507,sch485@sfusd.edu,6,7,K,8,N,N,N,Y,38,68478,6113245,,05360,Y,0,7,C4,N
+136,"NPS - Copper Hills Youth Center",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+785,"Wallenberg (Raoul) HS",,"40 Vega St",94115,,"San Francisco",CA,4157493469,"Harris, Tanya",4153467303,sch785@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3830205,,07845,Y,0,9,HS1,N
+937,"Sheridan PreK",,"431 Capitol Ave",94112,,"San Francisco",CA,4154694743,"Edwards, Dina",,,1,,PK,PK,N,N,N,N,38,68478,3868478,,05667,Y,1,1,EE,N
+180,"NPS - Center for Early Intervention on Deafness (CEID)","NPS - CEID","1035 Grayson St",94710,2642,Berkely,CA,5108484800,,5108484801,Cindy@CEID.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,"NPS - CEID",,Y,1,1,,N
+714,"Marshall ES",,"1575 15th St",94103,,"san francisco",CA,4152416280,"Bratt, Nadya",4152416547,,2,3,K,5,Y,N,N,N,38,68478,6041412,,05646,Y,1,1,C1,N
+930,"McCoppin (Frank) EED OST",,"651 6th Ave",94118,,"San Francisco",CA,4157508495,"Ng, Ivy",,,1,,PK,PK,N,N,N,N,38,68478,6041016,,05611,Y,1,1,EE,N
+184,"PRV - Open Mind School",,"1215 O Brien Dr",94025,1412,"Menlo Park",CA,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000002,,A1900619,Y,1,1,,N
+186,"NPS - Falcon Ridge Ranch",,"633 UT-9",84779,,Virgin,UT,8664528775,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+493,"SF Community K-8",,"125 Excelsior Ave",94112,,"San Francisco",CA,4154694739,"Dobrott, Heidi",4153376879,sch493@sfusd.edu,6,7,K,8,N,N,N,Y,38,68478,6093488,,05663,Y,0,8,C4,N
+165,"NPS - The Help Group: North Hills Prep",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+189,"NPS - Three Points Academy",,"2994 S Gould Wash Rd",84737,,Hurricane,UT,4356350636,,,forrestluanne@gmail.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+092,"McAuley CEEP",,"2200 Hayes St",94117,,"San Francisco",CA,4157505580,"Kruger, Kelly",,,5,4,6,"5th YR Senior",N,N,N,N,38,10389,6069561,,09270,Y,0,6,,N
+009,"NPS - Stanbridge Academy",,"515 E Poplar Ave",94401,,"San Mateo",CA,6503755860,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+153,"NPS - Spectrum Center, Inc: Camden Campus",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+144,"NPS - La Europa Academy",,"1121 Vine St",84121,,Murray,UT,8012689300,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+170,"NPS - The Phillips Academy (TPA)",,"1910 Central Ave",94501,,Alameda,CA,5107697100,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+193,"NPS - Morgan Autism Center",,"950 St Elizabeth Dr",95126,3900,"San Jose",CA,4082418161,,4082418231,info@morgancenter.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+746,"Ortega (Jose) ES",,"400 Sargent St",94132,,"San Francisco",CA,4154694726,"Antram, Paula",4155847972,sch746@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041271,,05635,Y,1,1,C5,N
+834,"Spring Valley Science ES",,"1451 Jackson St",94109,,"San Francisco",CA,4157493535,"Arnott, Jessica",4157493555,sch834@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041594,,05670,Y,1,1,C2,N
+190,"NPS - Spectrum Center Antioch Campus",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+552,"Five Keys Adult HS Charter","Five Keys","70 Oak Grove",94107,,"San Francisco",CA,4157343310,,4157343314,steveg@5keyscharter.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0118133,"Five Keys",12373,Y,1,6,,Y
+844,"Alvarado TK (Closed)","Alvarado TK","625 Douglass St",94114,,"San Francisco",CA,4156955695,"Broecker, Robert Roy",4156955447,SCH420@SFUSD.EDU,,,,,N,N,N,N,38,68478,3868478,"Alvarado TK",05583,Y,,,,N
+975,"Presidio EES",,"387 Moraga Ave",94129,,"San Francisco",CA,4155615822,"Loughridge, Danielle",,,1,,TK,PK,N,N,N,N,38,68478,0117499,,13488,Y,1,1,EE,N
+828,Access,,"750 25th Ave",94121,,"San Francisco",CA,,,,,5,,K,Adult,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+006,"NPS - Edgewood Adolescent Day  Treatment Center",,"1801 Vicente St",94116,,"San Francisco",CA,4156823175,,4156657852,gussief@edgewoodcenter.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,000879144,Y,1,1,,N
+179,"NPS - Palo Alto Preparatory School","Palo Alto Prep","2462 Wyandotte St",94043,2367,"Mountain View",CA,6504937071,,,lisa@paloaltoprep.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,"Palo Alto Prep",,Y,1,1,,N
+718,"McKinley ES",,"1025 14th St",94114,,"San Francisco",CA,4152416300,"Collins, John",4152416548,sch718@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041420,,05647,Y,1,1,C3,N
+458,"Early Morning Study Program HS (CLOSED)",,"375 Woodside Ave",94127,,"San Francisco",CA,4157537792,,,,4,,9,12,N,N,Y,N,38,10389,0000000,,09270,Y,0,9,,N
+903,"Argonne EES",,"750 16th Ave",94118,,"San Francisco",CA,4157508617,"Nwankwo, Nkechi",4157508617,,1,3,TK,PK,N,N,N,N,38,68478,3868478,,05586,Y,1,1,EE,N
+681,"Life Learning HS Academy Charter",,"0651 8th Bldg 229 - T I St",94130,,"San Francisco",CA,4153978957,,4153979274,,4,,9,"5th YR Senior",N,N,Y,N,38,68478,3830429,,07721,Y,1,6,,Y
+664,"Lafayette ES",,"4545 Anza St",94121,,"San Francisco",CA,4157508483,"Seaton, Sarah",4157508472,sch664@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041305,,05637,Y,1,1,C1,N
+140,"NPS - Forest Heights Lodge",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+071,"NPS - Spectrum Center Tara Hills Campus",,"16330 San Pablo Av",94806,1242,"San Pablo",CA,5107244494,,5107244430,kbohrer@esa-education.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+927,"Taylor (Edward R) PreK",,"423 Burrows St",94134,,"San Francisco",CA,4153301530,"Norris, David",,,1,,PK,PK,N,N,N,N,38,68478,6040943,,05604,Y,1,1,EE,N
+657,"KIPP San Francisco Bay MS Academy Charter",,"1430 Scott St",94115,,"San Francisco",CA,4154404306,,4154404308,ksfbainfo@kippbayarea.org,4,,5,8,N,N,Y,N,38,68478,0101352,,,Y,1,6,,Y
+131,"NPS - Bayes Achievement Center, Inc.",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+048,"NPS - The Bay School",,"5400 Soquel Av Apt SteF",95062,,"Santa Cruz",CA,8314629620,,8314629616,info@thebayschool.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+656,"Serra (Junipero) ES",,"625 Holly Park Cir",94110,,"San Francisco",CA,4156955685,"Palomares, Katerina",4159205194,sch656@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041289,,05636,Y,1,1,C1,N
+122,"NPS - Heartspring School",,"8700 E 29th St N",67226,,Wichita,KA,3166348700,,3166348851,carar@heartspring.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+658,"KIPP Bayview Academy MS Charter",,"1060 Key Av",94124,,"San Francisco",CA,4154672522,,4154679522,kba_info@kippbayarea.org,4,,5,8,N,N,Y,N,38,68478,0101337,,,Y,1,6,,Y
+874,"Stockton (Commodore) TK (Closed)",,"949 Washington St",94108,,"San Francisco",CA,,,,,,,,,N,N,N,N,38,68478,3868478,,13621,Y,,,C1,N
+196,"NPS - Triumph Academy",,"62 S 950 W",84302,,"Brigham City",UT,4355319277,,4355385063,bruce@triumphyouthservices.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+824,"Special Education Home/Hospital Sites","SP-HOME HOSPITAL","135 Van Ness Ave",94102,4152,"San Francisco",CA,4153194811,,,,5,,PK,Adult,N,N,N,N,38,10389,6069561,"SP-HOME HOSPITAL",09473,Y,1,1,,N
+859,"Tenderloin Community ES",TenderloinCommunity,"627 Turk St",94102,,"San Francisco",CA,4157493567,"Lister, Paul",4157493643,SCH859@SFUSD.EDU,2,3,TK,5,Y,N,N,N,38,68478,6115901,TenderloinCommunity,07732,Y,1,1,C2,N
+018,"NPS - Seneca Family of Agencies: James Baldwin Academy",SENECA,"887 Potrero Av",94110,,"San Francisco",CA,4152066469,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,SENECA,09473,Y,1,1,,N
+562,"Garfield ES",,"420 Filbert St",94133,,"San Francisco",CA,4152917924,"Maruoka, Karen",4152917916,sch562@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041040,,05613,Y,1,1,C2,N
+618,"Buena Vista Horace Mann K-8",,"3351 23rd St",94110,,"San Francisco",CA,4156955881,"DelariosMoran, Claudia",4152827869,sch618@sfusd.edu,6,7,K,8,N,N,N,Y,38,68478,6062046,,05626,Y,0,9,C4,N
+162,"NPS - The Help Group: Sunrise",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+925,"Excelsior At Guadalupe EES",,"859 Prague St",94112,,"San Francisco",CA,4154694753,,,,1,,PK,PK,N,N,N,N,38,68478,6041123,,05621,Y,1,1,EE,N
+815,"Asawa (Ruth) SOTA HS",,"555 Portola Dr",94131,,"San Francisco",CA,4156955700,"Purser, Kenneth",4156955326,sch815@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3830387,,01276,Y,0,10,HS1,N
+890,"Redding TK (Closed)",,"1421 Pine St",94109,,"San Francisco",CA,4157493525,,4157493527,,,,,,N,N,N,N,38,68478,3868478,,05659,Y,,,,N
+708,"Marina MS",,"3500 Fillmore St",94123,,"San Francisco",CA,4157493495,"GaryHarris, Michael",4159217539,sch708@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6062061,,05645,Y,0,9,MS,N
+128,"NPS - Anova Center for Education, Concord",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+710,"King Jr (Dr Martin L) MS",,"350 Girard St",94134,,"San Francisco",CA,4153301500,"Fechter, Tyson",4154687295,sch710@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6059885,,05655,Y,0,8,MS,N
+147,"NPS - New Leaf Academy",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+032,"NPS - Spectrum Center San Francisco Campus",,"95 Gough St",94114,,"San Francisco",CA,5107244494,,5107244430,kbohrer@esa-education.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+075,"NPS - Family Life Center",,"0365 Kuck Ln",94952,,Petaluma,CA,7077956954,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+301,"Special Education Services",,"750 25th Ave",94121,,"San Francisco",CA,4157592222,,,,5,,K,Unknown,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+458,"Youth Chance High School",,"169 Steuart St",94105,,"San Francisco",CA,4156151337,"Lepe, Sylvia",,,5,6,9,"5th YR Senior",N,N,N,N,38,10389,3830445,,10647,Y,1,7,HS2,N
+864,"UCSF Child Life School",,"1975 4th St",94158,,"San Francisco",CA,4154761000,,,,5,,PK,Unknown,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+977,"Weill (Raphael) PreK EED OST",,"1501 O Farrell St",94115,,"San Francisco",CA,4157493548,"Kawaii, DarrenAnthony",,,1,,PK,PK,N,N,N,N,38,68478,0117515,,13244,Y,1,1,EE,N
+199,"NPS - Alpline Academy - Mountain View Campus",,"1280 Whispering Horse Dr",84074,,Erda,UT,6196592854,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+720,"Metropolitan Arts & Technology HS Charter",,"0400 Mansell - Room 136 St",94134,,"SAN FRANCISCO",CA,4155505920,,4152061444,info@es-metro.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0109769,,,Y,1,6,,Y
+114,"NPS - Youth Care - Pine Ridge Academy",,"12595 S Minuteman Dr",84020,9541,Draper,UT,8015726989,,,Joshua.vineyard@youthcare.com,5,,6,"5th YR Senior",N,N,N,N,38,10389,0000001,,,Y,,,,N
+033,"NPS - Arise Educational Center",,"1760 Caesar Chavez St",94124,1136,"San Francisco",CA,4156411878,,4156414082,info@riseinst.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+174,"NPS - La Cheim School, El Sobrante",,"4892 San Pablo Dam Rd",94803,,"El Sobrante",CA,5102432360,,,karen@lacheim.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+161,"NPS - The Help Group: Bridgeport",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+149,"NPS - Oak Grove School, Inc.",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+915,"Stockton (Commodore) EES",,"1 Trenton St",94108,,"San Francisco",CA,4152917932,"Yu, Jenny",,,1,3,TK,PK,N,N,N,N,38,68478,0117465,,13621,Y,1,1,EE,N
+625,"Carver (Dr George W) ES",,"1360 Oakdale Ave",94124,,"San Francisco",CA,4153301540,"Manning, Makaela",4154677217,sch625@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6093496,,05616,Y,1,1,C3,N
+884,"Sheridan TK (Closed)",,"431 Capitol Av",94112,,"San Francisco",CA,4154694743,"Edwards, Dina",,,,,,,N,N,N,N,38,68478,3868478,,05667,Y,,,,N
+110,"NPS - Keith Thompson School",,"1850 San Benito St",95023,,Hollister,CA,8316362121,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+,"Virtual Academy",,"555 Franklin St",94102,,"San Francisco",CA,4152416000,,,olp@sfusd.edu,5,,,,N,N,N,N,38,68478,xxxxxxx,,,Y,0,6,,N
+439,"Balboa HS",,"1000 Cayuga Ave",94112,,"San Francisco",CA,4154694090,"Arenson, Catherine",4154690859,sch439@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3830288,,05587,Y,0,16,HS1,N
+760,"Revere (Paul) K-8",,"555 Tompkins Ave",94110,,"San Francisco",CA,4156955656,"Eaton, William",4156470878,sch760@sfusd.edu,6,7,K,8,N,N,N,Y,38,68478,6041487,,05654,Y,0,7,C4,N
+661,"KIPP SF College Preparatory Charter",,"655 DeHaro St",94102,,"San Francisco",CA,4082346807,,,caroline.gifford@kippbayarea.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0127530,,13410,Y,1,6,,Y
+951,"Malcolm X Academy PreK",,"350 Harbor Rd",94124,,"San Francisco",CA,4156955950,"Fitzsimons, Matthew",,,1,,PK,PK,N,N,N,N,38,68478,6041586,,05669,Y,1,1,EE,N
+809,"Creative Arts K-8 Charter",,"1601 Turk St",94115,,"San Francisco",CA,4157493509,,4157493437,info@creativeartscharter.org,6,,K,8,N,N,N,Y,38,68478,6112601,,03982,Y,0,7,,Y
+160,"NPS - The Help Group: Summit View Westside/Westview",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+178,"NPS - Star View Academy","South Bay High","4025 W 226th St",90505,2340,Torrance,CA,3103734556,,,tchandler@starsinc.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,"South Bay High",,Y,1,1,,N
+130,"NPS - Bayhill High - Bay Area Educational Institute",,"1940 Virginia St",94709,,Berkeley,CA,5109840599,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+457,"C.A.R.E. Middle School",,,,,,,,"Lepe, Sylvia",,,5,6,6,8,N,N,N,N,38,10389,3830445,,10647,Y,0,6,MS,N
+079,"NPS - STARS High","STARS High","545 Estudillo Av",94577,,"San Leandro",CA,5103529200,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,"STARS High",,Y,1,1,,N
+176,"NPS - The Helix School",,"145 Lomita Dr",94941,1403,"Mill Valley",CA,4155695056,,,liz@thehelixschool.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+476,"Lee (Edwin and Anita) Newcomer ES",,"950 Clay St",94108,,"San Francisco",CA,4152917918,"Kwong, Lisa",4152917965,sch476@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6089569,,05596,Y,1,1,C2,N
+159,"NPS - The Help Group: THG West",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+129,"NPS - Anova Center for Education, Sonoma",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+962,"Flynn (Leonard R) EED OST",,"3125 Cesar Chavez St",94110,,"San Francisco",CA,4156955782,"Ho, Penelope",,,1,,PK,PK,N,N,N,N,38,68478,6041347,,05640,Y,1,1,EE,N
+072,"NPS - Aldea School",,"4002 Jefferson St",94558,,Napa,CA,7072248266,,7072248628,DGRIFFIN@ALDEAINC.ORG,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+571,"Washington (George) HS",,"600 32nd Ave",94121,,"San Francisco",CA,4157508400,"Schlauraff, John",4157508417,sch571@sfusd.edu,4,6,9,12,N,N,Y,N,38,68478,3839081,,05617,Y,0,12,HS1,N
+676,"Lawton K-8",,"1570 31st Ave",94122,,"San Francisco",CA,4157592832,"Sedrakian, Armen",4157592842,sch676@sfusd.edu,6,7,TK,8,N,N,N,Y,38,68478,6041339,,05639,Y,0,9,C4,N
+010,"NPS - Wellspring Education Services, Inc.",,"1543 Sunnyvale Ave",94597,,"Walnut Creek",CA,9252953080,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+827,"Special Education Private/Parochial",,"555 Franklin St",94102,,"San Francisco",CA,4152391192,,,,5,,TK,Unknown,N,N,N,N,38,10389,0000002,,,Y,1,1,,N
+820,"Sheridan ES",,"431 Capitol Ave",94112,,"San Francisco",CA,4154694743,"Edwards, Dina",4154694089,sch820@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041560,,05667,Y,1,1,C5,N
+154,"NPS - South Bay High School Inc.",,"4025 W 226th St",90505,2340,Torrance,CA,3103734556,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+169,"NPS - The Help Group: Bridgeport Vocational Center",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+953,"Serra (Junipero)  EED OST",,"625 Holly Park Cir",94110,,"San Francisco",CA,4156595922,"Loughridge, Danielle",,,1,,PK,PK,N,N,N,N,38,68478,6041289,,05636,Y,1,1,EE,N
+742,"Downtown HS",,"693 Vermont St",94107,,"San Francisco",CA,4156955860,"Williams, Todd",4156955863,sch742@sfusd.edu,4,4,9,12,N,N,Y,N,38,68478,3830064,,05602,Y,0,11,HS2,N
+892,"SF Court Woodside Learning Ctr",,"375 Woodside Ave",94127,,"San Francisco",CA,4157537792,"Lepe, Sylvia",4157537793,,4,6,6,12,N,N,Y,N,38,10389,3830361,,09270,Y,0,6,HS2,N
+063,"NPS - North Valley Santa Rosa Campus","Santa Rosa Campus","3164 Condo Ct",95403,,"Santa Rosa",CA,7075232334,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,"Santa Rosa Campus",,Y,1,1,,N
+107,"NPS - BOOST of Cypress School",,"70 Skyview Ter Apt C",94903,1845,"San Rafael",CA,7186400410,,,kbacon@ucpnb.org,5,,K,"5th YR Senior",N,N,N,N,38,10389,0000001,,,Y,,,,N
+946,"Ortega (Jose) Prek",,"400 Sargent St",94132,,"San Francisco",CA,4154694726,"Antram, Paula",,,1,,PK,PK,N,N,N,N,38,68478,6041271,,05635,Y,1,1,EE,N
+052,"NPS - Star Academy",,"4470 REDWOOD Hw",94903,1901,"San Rafael",CA,4154568727,,4154562092,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+947,"Jefferson EED OST",,"1325 18th Ave",94122,,"San Francisco",CA,4157592795,"Lin, Mary",,,1,,PK,PK,N,N,N,N,38,68478,6041230,,05631,Y,1,1,EE,N
+932,"Huerta (Dolores) Pre-K",,"65 Chenery St",94131,,"San Francisco",CA,4156955669,"Garnica, Edward",,,1,,Toddlers,3,N,N,N,N,38,68478,6040984,,05607,Y,1,1,EE,N
+706,"Tenderloin Community TK (Closed)","Tenderloin Community","627 Turk St",94102,,"San Francisco",CA,4157493567,"Shattner, Anastasia",4157493643,,,,,,N,N,N,N,38,68478,3868478,"Tenderloin Community",07732,Y,,,,N
+544,"Key (Francis Scott) ES",,"1530 43rd Ave",94122,,"San Francisco",CA,4157592811,"Page, Megan",4157592810,sch544@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041008,,05609,Y,1,1,C5,N
+908,"Harte (Bret) PreK EED",,"950 Hollister Ave",94124,,"San Francisco",CA,4153301545,"Hilinski, Jeremy",,,1,,PK,PK,N,N,N,N,38,68478,6040760,,05591,Y,1,1,EE,N
+551,"Five Keys Independence HS Charter","Five Keys","70 Oak Grove",94107,,"San Francisco",CA,4157343310,,4157343314,steveg@5keyscharter.org,4,,9,"5th YR Senior",N,N,Y,N,38,68478,0118141,"Five Keys",,Y,1,6,,Y
+782,"Stevenson (Robert Louis) ES",,"2051 34th Ave",94116,,"San Francisco",CA,4157592837,"Lau-Yee, Diane",4157592844,sch782@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041529,,05660,Y,1,1,C5,N
+879,"Serra (Junipero) Annex TK (Closed)",,"155 Appleton Av",94110,,"San Francisco",CA,,,,,,,,,N,N,N,N,38,68478,3868478,,05636,Y,,,C1,N
+670,"Lakeshore ES",,"220 Middlefield Dr",94132,,"San Francisco",CA,4157592825,"Hartford, Matthew",4157538312,sch670@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041321,,05638,Y,1,1,C5,N
+786,"Parks (Rosa) ES",,"1501 O Farrell St",94115,,"San Francisco",CA,4157493519,"Schmidt-Nojima, Laura",4157493610,sch786@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041503,,05658,Y,1,1,C2,N
+899,"Central Enrollment",CentralEnroll,"555 Franklin St",94102,,"San Francisco",CA,4152416690,,,,2,,Infant,Unknown,Y,N,N,N,38,68478,,CentralEnroll,,Y,1,1,,N
+045,"NPS - Wings Learning Center - Burlingame",,"1201 Main St",94063,,"Redwood City",CA,6503653250,,6503653267,DEJULIO@WINGSLEARNINGCENTER.ORG,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+986,"Spring Valley EED OST",,"1451 Jackson St",94109,,"San Francisco",CA,4157493590,"Loughridge, Danielle",,,1,,PK,PK,N,N,N,N,38,68478,6041594,,05670,Y,1,1,EE,N
+678,"Leadership HS Charter (Closed)",,"0241 Oneida - Roon 301 Av",94134,,"San Francisco",CA,4158418910,,4158418925,,4,,9,"5th YR Senior",N,N,Y,N,38,10389,3830411,,,Y,1,6,,N
+926,"Excelsior at Monroe EED OST",,"260 Madrid St",94112,,"San Francisco",CA,4154694771,"Tobin-Wallis, Anna",,,1,,PK,PK,N,N,N,N,38,68478,6041446,,05651,Y,1,1,EE,N
+705,"Harte (Bret) TK (Closed)",,"1035 Gilman Av",94124,,"San Francisco",CA,4153301520,"Hilinski, Jeremy",4153301555,,,,,,N,N,N,N,38,68478,6040760,,05591,Y,,,,N
+910,"Havard (Leola M) EES",,"1360 Oakdale Ave Rm 106",94124,,"San Francisco",CA,4156955660,"Burch, KamaelTenesia",,,1,,PK,PK,N,N,N,N,38,68478,0117564,,13585,Y,1,1,EE,N
+722,"Miraloma ES",,"175 Omar Way",94127,,"San Francisco",CA,4154694734,"Thompson, Diane",4154694069,sch722@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041438,,05648,Y,1,1,C5,N
+867,"Visitacion Valley ES",,"55 Schwerin St",94134,,"San Francisco",CA,4154694796,"Johnson, Cephus",4154694099,sch867@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041701,,05677,Y,1,1,C4,N
+764,"Burton (Phillip and Sala) HS",,"400 Mansell St",94134,,"San Francisco",CA,4154694550,"Thomas, Suniqua",4152396806,sch764@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3830254,,08189,Y,0,10,HS1,N
+157,"NPS - The Avalon Academy",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+842,"Sunnyside ES",,"250 Foerster St",94112,,"San Francisco",CA,4154694746,"Spoering, Sauntheri",4153343569,sch842@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041610,,05672,Y,1,1,C5,N
+883,"Carmichael (Bessie) TK (Closed)",,"375 7th St",94103,,"San Francisco",CA,4156158441,"Lagdamen, Tina",4153557683,,,,,,N,N,N,N,38,68478,6040752,,05590,Y,,,,N
+651,"O'Connell (John) HS",,"2355 Folsom St",94110,,"San Francisco",CA,4156955370,"Ryan, Susan",4156955379,sch651@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3834769,,07350,Y,0,13,HS1,N
+132,"NPS - Care Youth Corporation (Formerly Red Rock)",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+008,"NPS - Hergl",,"1570 Greenwich St",94123,,"San Francisco",CA,4154740191,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+876,"West Portal ES",,"5 Lenox Way",94127,,"San Francisco",CA,4157592846,"Wong, Henry",4152422526,sch876@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041727,,05679,Y,1,1,C5,N
+478,"Clarendon ES",,"500 Clarendon Ave",94131,1113,"San Francisco",CA,4157592796,"Maloney, Carrie",4157592799,sch478@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040828,,05666,Y,1,1,C5,N
+634,"Lick (James) MS",,"1220 Noe St",94114,,"San Francisco",CA,4156955675,"Herrera, Kiara",4156955360,sch634@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6062053,,05629,Y,0,8,MS,N
+466,"Independence HS",,"1350 7th Ave",94122,,"San Francisco",CA,4152425000,"Klafter, Anastasia",4152422655,sch466@sfusd.edu,4,4,9,12,N,N,Y,N,38,68478,3830197,,07840,Y,0,21,HS2,N
+171,"NPS - United Cerebral Palsy of the North Bay - Cypress School",,"3835 Cypress Dr Apt 103",94954,6965,Petaluma,CA,7077669990,,4154794363,lbriggin@ucpnb.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+858,"Brown Jr. (Willie) MS",WillieBrownMS,"2055 Silver Ave",94124,,"San Francisco",CA,4156428901,"Mouton-Fuentes, Malea",4156411120,sch858@sfusd.edu,3,13,6,8,N,Y,N,N,38,68478,0132241,WillieBrownMS,02774,Y,1,9,MS,N
+039,"NPS - Spectrum Center Peninsula Campus",,"930 Oddstad Bl",94044,4400,Pacifica,CA,6503559800,,6503559801,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+185,"NPS - Boulder Creek Academy",,"378 Emerson Ln",83605,,"Bonners Ferry",ID,2082677522,,,charla.suppe@uhsinc.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+735,"New Traditions ES",,"2049 Grove St",94117,,"San Francisco",CA,4157508490,"Quadros, Myra",4157508479,sch735@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6097919,,05652,Y,1,1,C3,N
+616,"Hilltop HS",,"1325 Florida St",94110,,"San Francisco",CA,4156955603,"Rodriguez-Blea, Lili",4156955367,,5,6,6,"5th YR Senior",N,N,N,N,38,10389,3830395,,09472,Y,0,14,HS2,N
+537,"Huerta (Dolores) ES",,"65 Chenery St",94131,,"San Francisco",CA,4156955669,"Garnica, Edward",4156955343,sch537@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040984,,05607,Y,1,1,C1,N
+691,"Longfellow ES",,"755 Morse St",94112,,"San Francisco",CA,4154694730,"Lee, Hector",4154694068,sch691@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041362,,05641,Y,1,1,C5,N
+035,"NPS - Timothy Murphy School",MURPHY,"One Saint Vincent Dr",94903,4154,"San Rafael",CA,4154997616,,,debbiec@timothymurphyschool.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,MURPHY,,Y,1,1,,N
+790,"Redding ES",,"1421 Pine St",94109,,"San Francisco",CA,4157493525,"Klein, Christine",4157493527,sch790@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041511,,05659,Y,1,1,C2,N
+632,"Denman (James) MS",,"241 Oneida Ave",94112,,"San Francisco",CA,4154694535,"Ujiie, Jenny",4155858402,sch632@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6059869,,05628,Y,1,8,MS,N
+566,"Gateway MS Charter",,"2340 Jackson St",94115,,"San Francisco",CA,4159221001,,4159221055,,4,,6,8,N,N,Y,N,38,68478,0123265,,12800,Y,1,6,,Y
+860,"Tule Elk Park TK (Closed)",,"2110 Greenwich St",94123,,"San Francisco",CA,4159205076,"Dominguez, Kathlene",,,,,,,N,N,N,N,38,68478,3868478,,12583,Y,,,EE,N
+449,"Carmichael (Bessie) K-8",,"375 7th St",94103,,"San Francisco",CA,4156158441,"Bell, Rasheena",4153557683,sch449@sfusd.edu,6,7,TK,8,N,N,N,Y,38,68478,6040752,,05590,Y,1,9,C4,N
+529,"Everett MS",,"450 Church St",94114,,"San Francisco",CA,4152416344,"Blacknell, Alicia",4155226729,sch529@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6062038,,07842,Y,0,9,MS,N
+697,"Lowell HS",,"1101 Eucalyptus Dr",94132,,"San Francisco",CA,4157592730,"Jones, Michael",4157592742,sch697@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3833407,,05643,Y,0,16,HS1,N
+198,"NPS - Alpine Academy - Lake View Campus",,"1492 Meadowbrook Dr",84074,,Tooele,UT,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+137,"NPS - Devereux Cleo Wallace - Colorado",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+882,"Stevenson (Robert Louis) TK (Closed)","Stevenson (Robert Lo","2051 34th Av",94116,,"San Francisco",CA,,,,,,,,,N,N,N,N,38,68478,3868478,"Stevenson (Robert Lo",05660,Y,,,,N
+201,"Special Education Assessment Request","PRE-K SPCH PARKS","1501 O Farrell St",94115,,"San Francisco",CA,4153401716,,,,5,,PK,Unknown,N,N,N,N,38,10389,6069561,"PRE-K SPCH PARKS",09473,Y,1,1,,N
+163,"NPS - The Help Group: Village Glen",,"13130 Burbank Blvd",91401,,"Sherman Oaks",CA,8779435747,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+483,"SF Civic Center Secondary HS",,"727 Golden Gate Ave",94102,,"San Francisco",CA,4152413000,"Gonzalez, Angelina",4152416192,,4,6,9,"5th YR Senior",N,N,Y,N,38,10389,3830445,,10647,Y,0,9,HS2,N
+145,"NPS - Lakemary Center, Inc - Paola, KS",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+030,"NPS - A Better Chance School","A Better Chance Sch","4138 LAKESIDE Dr",94806,,RICHMOND,CA,5102621500,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,"A Better Chance Sch",,Y,1,1,,N
+895,"Rodriguez (Zaida T) TK (Closed)",,"421 Bartlett St",94110,,"San Francisco",CA,4156955844,,,,,,,,N,N,N,N,38,68478,3868478,,05649,Y,,,EE,N
+015,"NPS - Oakes Children Center",,"1550 Treat Av",94110,,"San Francisco",CA,4156418000,,4156418002,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+488,"Sloat (Commodore) ES",,"50 Darien Way",94127,,"San Francisco",CA,4157592807,"Abdolcader, Fowzigiah",4157592843,sch488@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040851,,05598,Y,1,1,C5,N
+825,"Special Education PK",,"135 Van Ness Ave",94102,,"San Francisco",CA,4152391192,,,,5,,Infant,Unknown,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+139,"NPS - Devereux Georgia Treatment Network",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+486,"Community Home Based Education",,"1350 7th Ave",94122,,"San Francisco",CA,4152416215,"Klafter, Anastasia",,,5,2,K,Unknown,N,N,N,N,38,10389,3830445,,10647,Y,0,9,,N
+950,"McLaren (John) EES",,"2055 Sunnydale Ave",94134,,"San Francisco",CA,4154694519,"Tobin-Wallis, Anna",,,1,3,TK,PK,N,N,N,N,38,68478,0117531,,13456,Y,1,1,EE,N
+845,"Argonne TK (Closed)",,"750 16th Av",94121,,"San Francisco",CA,,,,,,,,,N,N,N,N,38,68478,3868478,,05586,Y,,,C1,N
+980,"Redding EED OST",,"1421 Pine St",94109,,"San Francisco",CA,4157493549,,,,1,,PK,PK,N,N,N,N,38,68478,6041511,,05659,Y,1,1,EE,N
+146,"NPS - Logan River Academy, LLC - Logan, UT",,"1683 S Hwy 89/91",84321,,Logan,UT,8667558400,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+638,"Parker (Jean) ES",,"840 Broadway St",94133,,"San Francisco",CA,4152917990,"Saldana, Sara",4152917996,sch638@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041206,,05630,Y,1,1,C2,N
+955,"Serra (Junipero) Annex EES",,"155 Appleton Ave",94110,,"San Francisco",CA,4159205138,"Loughridge, Danielle",,,1,3,TK,PK,N,N,N,N,38,68478,3868478,,05636,Y,1,1,EE,N
+621,"SF International HS",,"655 De Haro St",94107,,"San Francisco",CA,4156955781,"Chan, Nicholas",4156955402,sch621@sfusd.edu,4,6,8,"5th YR Senior",N,N,Y,N,38,68478,0119875,,12494,Y,0,8,HS1,N
+404,"Giannini (A.P.) MS",,"3151 Ortega St",94122,,"San Francisco",CA,4157592770,"Schoeman, Tai-Sun",4156648541,sch404@sfusd.edu,3,4,6,8,N,Y,N,N,38,68478,6059828,,05580,Y,0,6,MS,N
+688,"Log Cabin Ranch HS Court School (CLOSED)",,"1 Log Cabin Ranch Rd",94010,,"La Honda",CA,4152416553,"Lanier, Chris",,,4,,8,"5th YR Senior",N,N,Y,N,38,10389,0000000,,09270,Y,0,7,HS,N
+988,"Sutro EED OST",,"235 12th Ave",94118,,"San Francisco",CA,4157508524,"Nwankwo, Nkechi",,,1,,PK,PK,N,N,N,N,38,68478,6041644,,05674,Y,1,1,EE,N
+017,"NPS - Sand Paths Academy",,"1218 S Van Ness Av",94110,,"San Francisco",CA,4158262662,,4158262680,SandPathsAcademy@cs.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+150,"NPS - Orion Academy",,"350 Rheem Blvd",94556,,Moraga,CA,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+188,"NPS - Charis Youth Center",,"714 W Main St",95945,6410,"Grass Valley",CA,5304779800,,,alisaw@charisyouthcenter.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+166,"NPS - The Help Group: Parkhill",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+723,"Moscone (George R) ES",,"2576 Harrison St",94110,,"San Francisco",CA,4156955736,"Twiest, Sarah",4156955341,sch723@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6099154,,05615,Y,1,1,C1,N
+813,"18-22 Mild/Moderate Program",,"750 25th Ave",94121,,"San Francisco",CA,4153797656,,4157508563,,5,,K,Unknown,N,N,N,N,38,10389,6069561,,09473,Y,1,1,,N
+862,"Ulloa ES",,"2650 42nd Ave",94116,,"San Francisco",CA,4157592841,"Jew, Meiquin",4157592845,,2,3,K,5,Y,N,N,N,38,68478,6041685,,05676,Y,1,1,C5,N
+453,"Harte (Bret) ES",,"1035 Gilman Ave",94124,,"San Francisco",CA,4153301520,"Hilinski, Jeremy",4153301555,sch453@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040760,,05591,Y,1,1,C3,N
+127,"NPS - Moonridge Academy",,"9450 W 2400th S",84720,,"Cedar City",UT,4355869585,,,https://www.moonridgeacademy.com/Contact-Us,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+931,"King (Thomas Starr) PreK",,"1215 Carolina St",94107,,"San Francisco",CA,4156955797,"Martin, DarleneElizabeth",,,1,,PK,PK,N,N,N,N,38,68478,6041602,,05671,Y,1,1,EE,N
+507,"Drew (Dr Charles) College Preparatory Academy ES",,"50 Pomona Ave",94124,,"San Francisco",CA,4153301526,"Franklin, Vidrale",4158229210,sch507@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6104673,,08191,Y,1,1,C3,N
+142,"NPS - Raskob Day School & Learning Institute",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+725,"Mission HS",,"3750 18th St",94114,,"San Francisco",CA,4152416240,"Forero, Valerie",4156261641,sch725@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3834082,,05650,Y,0,10,HS1,N
+521,"El Dorado ES",,"70 Delta St",94134,,"San Francisco",CA,4153301537,"Cordero, Silvia",4154672435,teach@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040950,,05605,Y,1,1,C5,N
+482,"SF Civic Center Secondary MS",,"727 Golden Gate Ave",94102,,"San Francisco",CA,4152413000,"Gonzalez, Angelina",4152416192,,3,4,6,8,N,Y,N,N,38,10389,3830445,,10647,Y,0,9,MS,N
+905,"Drew (Dr Charles) EES",,"50 Pomona St",94124,,"San Francisco",CA,4153301546,"Franklin, Vidrale",,,1,,PK,PK,N,N,N,N,38,68478,6104673,,08191,Y,1,1,EE,N
+084,"NPS - Cinnamon Hills Youth Crisis Center",,"770 E Saint George Bl",84770,,"St. George",UT,4356740984,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+832,"The Academy - SF @ McAteer HS",,"555 Portola Dr",94131,,"San Francisco",CA,4156955701,"Mack, Hollie",4156955326,sch832@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,0119958,,12526,Y,0,9,HS1,N
+965,"Rodriguez (Zaida T) EES",,"421 Bartlett St",94110,,"San Francisco",CA,4156955844,"Keener, Lindsey",,,1,3,TK,PK,N,N,N,N,38,68478,6089585,,05649,Y,1,1,EE,N
+857,"Mission Preparatory K-8 School Charter",,"75 Francis St",94112,,"San Francisco",CA,4155089626,,,jhenzerling@missionpreparatory.org,6,,K,8,N,N,N,Y,38,68478,0123505,,,Y,0,7,,Y
+948,"Jefferson EES",,"1350 25th Ave",94122,,"San Francisco",CA,4157592852,"Lin, Mary",,,1,,PK,PK,N,N,N,N,38,68478,6041230,,05631,Y,1,1,EE,N
+973,"Revere (Paul) PreK",,"555 Tompkins Ave",94110,,"San Francisco",CA,4156955656,"Eaton, William",,,1,,PK,PK,N,N,N,N,38,68478,6041487,,05654,Y,1,1,EE,N
+458,"C.A.R.E. Buchanan",,"1530 Buchanan St",94115,,"San Francisco",CA,4159319622,"Lepe, Sylvia",,,5,6,6,"5th YR Senior",N,N,N,N,38,10389,3830445,,10647,Y,0,6,HS2,N
+881,"Ulloa TK (Closed)","Ulloa TK","2650 42nd Av",94116,,"San Francisco",CA,,,,,2,,,,Y,N,N,N,38,68478,3868478,"Ulloa TK",05676,Y,1,1,,N
+743,"Wells (Ida B) HS",,"1099 Hayes St",94117,,"San Francisco",CA,4152416315,"Pringle, Catherine",4152416356,sch743@sfusd.edu,4,4,9,12,N,N,Y,N,38,68478,3830031,,05653,Y,0,20,HS2,N
+757,"Jordan (June) HS",,"325 La Grande Ave",94112,,"San Francisco",CA,4154524922,"Chui, Amanda",4154524927,sch757@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,0102103,,11252,Y,0,9,HS1,N
+838,"King (Thomas Starr) ES",,"1215 Carolina St",94107,,"San Francisco",CA,4156955797,"Martin, DarleneElizabeth",4156955338,sch838@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041602,,05671,Y,1,1,C3,N
+191,"NPS - New Horizon School and Learning Center",,"827 Third St",95404,,"Santa Rosa",CA,7075793723,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+138,"NPS - Devereux Foundation - Florida",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+918,"Webster (Daniel) EED OST",,"465 Missouri St",94107,,"San Francisco",CA,4159205076,"Burch, KamaelTenesia",,,1,,PK,PK,N,N,N,N,38,68478,6040893,,05600,Y,1,1,EE,N
+994,"Cobb (Dr William L) PreK","COBB CC","2725 California St",94115,4157,"San Francisco",CA,4157493505,"Dean, Jeri",,,1,,PK,PK,N,N,N,N,38,68478,6040968,"COBB CC",05681,Y,1,1,EE,N
+481,"Cleveland ES",,"455 Athens St",94112,,"San Francisco",CA,4157592796,"Escobar, Marlon",4154694051,sch481@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040836,,05597,Y,1,1,C4,N
+194,"NPS - Spectrum Center- San Jose Campus",,"520 Sands Dr",95125,,"San Jose",CA,4082812435,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+197,"NPS - New Haven Residential Treatment Center - Spanish Fork",,"2172 E 7200 S",84660,,"Spanish Fork",UT,8668051199,,,,5,,9,12,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+007,"NPS - Erikson School",ERIKSON,"1195 Hudson Av",94124,,"San Francisco",CA,4159205020,,4159205044,,5,,K,Unknown,N,N,N,N,38,10389,0000001,ERIKSON,,Y,1,1,,N
+525,"Cobb (Dr William L) ES",,"2725 California St",94115,,"San Francisco",CA,4157493505,"Dean, Jeri",4157493436,sch525@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040968,,05681,Y,1,1,C3,N
+175,"NPS - Discovery Ranch for Girls",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+614,"Hillcrest ES",,"810 Silver Ave",94134,,"San Francisco",CA,4154694722,"Haynes, Linnette",4154694067,sch614@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041156,,05625,Y,1,2,C4,N
+113,"NPS - Via Center",,"2126 6th St",94710,2248,Berkeley,CA,5108481616,,5108481632,viacenter@viacenter.org,7,,K,12,N,N,N,N,38,10389,0000001,,,Y,,,,N
+082,"NPS - Heritage Schools",,"5600 N Heritage School Dr",84604,,Provo,UT,8012264600,,8012264696,susiefell@heritagetc.org,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+650,"Muir (John) ES",,"380 Webster St",94117,,"San Francisco",CA,4152416335,"Liebert, Sara",4154319938,sch650@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041255,,05633,Y,1,1,C2,N
+865,"Havard (Leola M) TK",,"1520 Oakdale Ave",94124,,"San Francisco",CA,4156955660,"Burch, KamaelTenesia",,,,,,,N,N,N,N,38,68478,3868478,,13585,Y,,,EE,N
+603,"Chavez (Cesar) ES",,"825 Shotwell St",94110,,"San Francisco",CA,4156955765,"Dowdle, Lindsay",4156955843,sch603@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041149,,05623,Y,1,1,C1,N
+848,"Sutro ES",,"235 12th Ave",94118,,"San Francisco",CA,4157508525,"Bonfiglio, Beth",4157508498,sch848@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041644,,05674,Y,1,1,C1,N
+490,"Lau (Gordon J) ES",,"950 Clay St",94108,,"San Francisco",CA,4152917921,"Choy, Gloria",4152917952,sch490@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6040877,,05599,Y,1,1,C2,N
+143,"NPS - Kolob Canyon",,,,,,,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+593,"Guadalupe ES",,"859 Prague St",94112,,"San Francisco",CA,4154694718,"Sharma, RajNarayan",4154694066,sch593@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041123,,05621,Y,1,1,C5,N
+141,"NPS - Irene M. Hunt School",,"300 Sunny Hills Dr",94960,,"San Anselmo",CA,4154573200,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+111,"NPS - Monarch School",,"22001 Fairmount Blvd",44118,,"Shaker Heights",OH,2163208483,,2169328520,johnsonl@wingspancg.org,5,,TK,12,N,N,N,N,38,10389,0000001,,,Y,,,,N
+823,"Sherman ES",,"1651 Union St",94123,,"San Francisco",CA,4157493530,"Parker, Helen",4157493433,sch8223@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041578,,05668,Y,1,1,C2,N
+938,"Grattan Prek EED",,"165 Grattan St",94117,,"San Francisco",CA,4157592850,"Walter, Catherine",,,1,,PK,PK,N,N,N,N,38,68478,6041115,,05620,Y,1,1,EE,N
+042,"NPS - Provo Canyon School",,"4501 N University Av",84604,5504,Provo,UT,8012272010,,8012272130,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+549,"McCoppin (Frank) ES",,"651 6th Ave",94118,,"San Francisco",CA,4157508475,"Lee, Bennett",4157508474,sch549@sfusd.edu,2,3,TK,5,Y,N,N,N,38,68478,6041016,,05611,Y,1,1,C1,N
+112,"NPS - Summitview Academy",,"5036 Sunrey Rd",95667,5667,Placerville,CA,5306219800,,5306219804,CWILLS@SUMMITVIEWTREATMENT.ORG,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+183,"NPS - Discovery Ranch",,"1308 S 1600th W",84664,,Mapleton,UT,,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+405,"Lincoln (Abraham) HS",,"2162 24th Ave",94116,,"San Francisco",CA,4157592700,"Manalang, Sharimar",4155662224,sch405@sfusd.edu,4,6,9,"5th YR Senior",N,N,Y,N,38,68478,3833241,,05581,Y,0,10,HS1,N
+505,"Milk (Harvey) Civil Right ES",,"4235 19th St",94114,,"San Francisco",CA,4152416276,"Glover, Charles",4152416545,sch505@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040919,,05601,Y,1,1,C1,N
+155,"NPS - Elevations Academy",,"2650 W 2700 S",84075,,Syracuse,UT,8017730200,,,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+177,"NPS - Mingus Mountain Academy",,"15801 E Don Carlos Dr",86314,,"Prescott Valley",AZ,6023352070,,6023352071,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+094,"NPS - Spectrum Center Mission Valley Campus",,"2021 Highland Bl",94542,,Hayward,CA,5105767990,,5105767898,,5,,K,Unknown,N,N,N,N,38,10389,0000001,,,Y,1,1,,N
+752,"Noriega TK (Closed)",,"1775 44th Av",94122,,"San Francisco",CA,4157592853,,,,,,,,N,N,N,N,38,68478,3868478,,13231,Y,,,EE,N
+497,"Webster (Daniel) ES",,"465 Missouri St",94107,,"San Francisco",CA,4156955787,"Burns, Kath",4158266813,sch497@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6040893,,05600,Y,1,1,C3,N
+849,"Drew (Dr Charles) TK (Closed)",,"50 Pomona Av",94124,,"San Francisco",CA,,,,,,,,,N,N,N,N,38,68478,3868478,,08191,Y,,,,N
+704,"McLaren (John) TK (Closed)",,"2055 Sunnydale Ave",94134,,"San Francisco",CA,4154694519,,,,,,,,N,N,N,N,38,68478,3868478,,13456,Y,,,EE,N
+875,"Presidio TK (Closed)",,"387 Moraga Av",94129,,"San Francisco",CA,4155615822,,,,,,,,N,N,N,N,38,68478,3868478,,05657,Y,,,,N
+887,"Gateway to College City College SF HS (Closed)",,"50 Phelan Ave",94112,,"San Francisco",CA,4154525768,"Graven, Thomas",4152393455,,4,,9,12,N,N,Y,N,38,68478,0128876,,13687,Y,0,0,,N
+458,"C.A.R.E. Bayview","C.A.R.E. PROGRAM","1601 Lane St",94124,4158,"San Francisco",CA,4158225300,"Lepe, Sylvia",4158229405,,5,6,6,"5th YR Senior",N,N,N,N,38,10389,3830445,"C.A.R.E. PROGRAM",10647,Y,0,6,HS2,N
+961,"Mission Education Center PreK",,"1670 Noe St",94131,,"San Francisco",CA,4156955313,"Llewelyn-Vasquez, Carla",,,1,,PK,PK,N,N,N,N,38,68478,6089585,,05649,Y,1,1,EE,N
+906,"Carmichael (Bessie) EES",,"55 Sherman St",94103,,"San Francisco",CA,4156158450,"Bell, Rasheena",4152416614,,1,,PK,PK,N,N,N,N,38,68478,6040752,,05590,Y,1,1,EE,N
+096,"NPS - California School for the Blind",,"500 Walnut Av",94536,,Fremont,CA,5107943800,,,,5,,K,Unknown,N,N,N,N,38,10389,0000002,,10346,Y,1,1,,N
+729,"Monroe ES",,"260 Madrid St",94112,,"San Francisco",CA,4154694736,"Boucher, Thor",4154694070,sch720@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041446,,05651,Y,1,1,C4,N
+589,"Grattan ES",,"165 Grattan St",94117,,"San Francisco",CA,4157592815,"Walter, Catherine",4157592803,sch589@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041115,,05620,Y,1,1,C1,N
+173,"NPS - Spectrum Center, Oakland Campus",,"6325 Camden St",94605,,Oakland,CA,5107296384,,,rjohnson@spectrumschools.com,5,,K,Unknown,N,N,N,N,38,10389,0000001,,09473,Y,1,1,,N
+546,"Francisco MS",,"2190 Powell St",94133,,"San Francisco",CA,4152917900,"Lee, Sang-Yeon",4152917910,sch546@sfusd.edu,3,3,6,8,N,Y,N,N,38,68478,6059844,,05610,Y,0,8,MS,N
+982,"Sanchez PreK",,"325 Sanchez St",94114,,"San Francisco",CA,4152416380,"Martin, Anne",,,1,,PK,PK,N,N,N,N,38,68478,6041545,,05664,Y,1,1,EE,N
+917,"Lau (Gordon J) PreK",,"950 Clay St",94108,,"San Francisco",CA,4152917921,"Choy, Gloria",4152917952,,1,,PK,PK,N,N,N,N,38,68478,6040877,,05599,Y,1,1,EE,N
+880,"Flynn (Leonard R) TK (Closed)",,"3125 Cesar Chavez St",94110,,"San Francisco",CA,4156955770,,,sch680@sfusd.edu,,,,,N,N,N,N,38,68478,3868478,,05640,Y,,,,N
+575,"Glen Park ES",,"151 Lippard Ave",94131,,"San Francisco",CA,4154694713,"Zarr, Lara",4153376942,sch575@sfusd.edu,2,3,K,5,Y,N,N,N,38,68478,6041073,,05618,Y,1,1,C1,N
