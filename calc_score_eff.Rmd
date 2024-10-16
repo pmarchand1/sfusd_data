@@ -1,7 +1,7 @@
 ---
 title: "SFUSD RAI - Reproducing the efficiency criteria calculation"
 author: "Philippe Marchand"
-date: "2024-10-14"
+date: "2024-10-15"
 output: 
     html_document:
         code_folding: hide 
@@ -12,6 +12,10 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
+
+## Updates
+
+10/15: Added the comparison with the full list of published scores, and changed the building condition calculation to better match the published data.
 
 ## Intro - Disclaimers
 
@@ -152,7 +156,7 @@ reactable(
 Note that this metric was originally defined as "the number of students attending a school as a percentage of the school's ideal capacity, but according to the *Composite score primer*, it was calculated as "the average
 capacity of each school minus the total enrollment". (In fact, it must be enrollment - capacity, since we want over-enrolled schools to score better.) In any case, we can expect that using the difference rather than the ratio of enrollment and capacity will lead to more extreme values (positive or negative) for high schools, which have larger capacities and populations.
 
-Some schools (Downtown, Independence, Wells) are missing from the capacity data provided by SFUSD, so we can assume the metric was set to the mean value for them. In order to match the partial published data (see last section), we must also assume SF International High School is missing even if there is a line (without school ID) in the file with the name "SFIHS".
+Some schools (Downtown, Independence, Wells) are missing from the capacity data provided by SFUSD, so we can assume the metric was set to the mean value for them. In order to match the published scores (see last section), we must also assume SF International High School and Mission Education Center are missing even if there are lines in the file for them (although SF International is listed as "SFIHS" without a school ID).
 
 ```{r}
 cap <- read_excel(file.path(data_dir, "C3 - School Site Program Capacity.xlsx")) %>% 
@@ -160,7 +164,7 @@ cap <- read_excel(file.path(data_dir, "C3 - School Site Program Capacity.xlsx"))
 # missing Downtown, Independence, Wells
 # SFIHS must be international high school, but to match the published results we have to ignore that
 #cap$SCHNO[cap$SchoolName == "SFIHS"] <- 621
-cap <- filter(cap, !is.na(SCHNO))
+cap <- filter(cap, !is.na(SCHNO), SchoolName != "Mission Education Center ES")
 ```
 
 
@@ -204,56 +208,60 @@ reactable(
 
 ## Building condition
 
-This calculation is simpler. We take the FCI data provided by SFUSD, standardize it with a negative sign (higher FCI is worse building condition) and then average the standardized scores for schools with multiple campuses. (Note: I would have expected the averaging of multiple campuses to occur before standardizing, but it matches the published scores better this way.)
+For this metric, the composite score primer states that: "Schools with multiple locations were assigned
+the average FCI score for each of its locations." However, to reproduce the published scores (see last section below), it is necessary to pick the worst (higher) FCI of the two campuses for Lilienthal and Rooftop, and take the better FCI of the two for Revere. Only Carmichael's score appears to be the average of its two campuses. 
+
 
 ```{r}
 fci <- read_excel(file.path(data_dir, "C4 Updated - FCI by Sites (with School Code).xlsx"))
 
-fci <- select(fci, SCHNO = school_no, fci = overall_campus_fci) %>%
+fci <- select(fci, SCHNO = school_no, school, fci = overall_campus_fci) %>%
     inner_join(schlist) %>% 
-    mutate(building_scl = -scale(fci)[,1]) %>% 
+    filter(!str_detect(school, "Winfield|Revere School|Peaks")) %>% 
     group_by(SCHNO, FULLNAME) %>% 
-    summarize(building_scl = mean(building_scl)) %>% 
-    ungroup()
+    summarize(fci = mean(fci)) %>% 
+    ungroup() %>% 
+    mutate(building_scl = -scale(fci)[,1])
+
 
 reactable(
-        mutate(fci, building_scl = round(building_scl, 3), rank = rank(building_scl)) %>% 
+        mutate(fci, fci, building_scl = round(building_scl, 3), rank = rank(building_scl)) %>% 
         arrange(desc(building_scl))
 )
 ```
 
 ## Verify with published data
 
-Although SFUSD never published the full breakdown of composite scores, a slide with the different components for a few schools at the top of the list was shared by a parent attending a SFUSD presentation. Here is that partial dataset.
-
-
-```{r}
-rai_part <- read.csv("rai_scores_partial_list.csv")
-
-reactable(rai_part[1:13])
-```
-
-Let's check our calculated scores for those 9 schools against the reference numbers.
+We can check the computed metrics above against SFUSD's table of standardized scores for each metric [here](rai_scores.csv).
 
 ```{r}
+
 # Combine all 4 score datasets
-eff_scores <- select(demand, SCHNO, FULLNAME, demand_scl) %>% 
-    inner_join(select(turnover, SCHNO, turnover_scl)) %>% 
-    inner_join(select(cap, SCHNO, enroll_scl)) %>% 
-    inner_join(fci)
+eff_scores <- select(demand, SCHNO, FULLNAME, demand_calc = demand_scl) %>% 
+    inner_join(select(turnover, SCHNO, turnover_calc = turnover_scl)) %>% 
+    inner_join(select(cap, SCHNO, enroll_calc = enroll_scl)) %>% 
+    inner_join(select(fci, SCHNO, building_calc = building_scl))
 
-# Combine with partial released scores for 9 schools
-rai_part_eff <- select(rai_part, schno, school, demand, turnover, enroll, building) %>% 
+rai_scores <- read.csv("rai_scores.csv")
+
+# Combine with SFUSD scores 
+rai_scores_eff <- select(rai_scores, schno, school, demand, turnover, enroll, building) %>% 
     inner_join(select(eff_scores, -FULLNAME), by = c("schno" = "SCHNO"))
 
-reactable(
-    mutate(rai_part_eff, demand_calc = round(demand_scl, 3), turnover_calc = round(turnover_scl, 3),
-           enroll_calc = round(enroll_scl, 3), building_calc = round(building_scl, 3)) %>% 
-        select(schno, school, demand, demand_calc, turnover, turnover_calc, 
-               enroll, enroll_calc, building, building_calc)
-)
+# Make plot
+rai_scores_eff_tall <- pivot_longer(rai_scores_eff, cols = -c(schno, school), 
+                                    names_to = c("var", "type"), names_sep = "_")
+
+rai_scores_eff_tall$type <- ifelse(is.na(rai_scores_eff_tall$type), "published", "calculated")
+
+rai_scores_eff_tall <- pivot_wider(rai_scores_eff_tall, names_from = type, values_from = value)
+
+ggplot(rai_scores_eff_tall, aes(x = calculated, y = published)) +
+    geom_point() + 
+    geom_abline() +
+    facet_wrap(~ var) +
+    theme_bw()
 ```
 
-
-Allowing for some rounding, all metrics except teacher turnover match within rounding error. For teacher turnover, the results are clearly inconsistent, and I suspect the final calculation was done with 2022-2024 data instead of the 2021-2023 data that was provided this summer. Indeed, looking at the *Composite score primer*, at one point it is mentioned that the calculation would use 2021-2023, but then at a different point it says: "Teacher turnover was averaged across school years 2022-23 and 2023-24." If this is correct, the fact that the scores change so much when sliding the 2-year window by a year also suggests that it is too short a timescale to compare schools based on their teacher turnover rates.
+For all metrics except turnover, the calculated values and published ones match (perfect match indicated by diagonal line). For teacher turnover, I suspect the final calculation was done with 2022-2024 data instead of the 2021-2023 data that was provided this summer. Indeed, looking at the *Composite score primer*, at one point it is mentioned that the calculation would use 2021-2023, but then at a different point it says: "Teacher turnover was averaged across school years 2022-23 and 2023-24." If this is correct, the fact that the scores change so much when sliding the 2-year window by a year also suggests that it is too short a timescale to compare schools based on their teacher turnover rates.
 
