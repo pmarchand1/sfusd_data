@@ -1,0 +1,129 @@
+---
+title: "SFUSD RAI - School Access criterion"
+author: "Philippe Marchand"
+date: "2024-10-16"
+output: 
+    html_document:
+        code_folding: hide 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+This is an attempt to understand the "school access" part of the composite score for the SFUSD resource alignment (school closure) process, which is defined as follows in the [Composite score primer](https://drive.google.com/file/d/1hYPK932n-HWLnhpx3qQIXCh9RtBsLUjZ/view?usp=sharing): 
+
+"School access was measured as the distance between a given school and the three nearest schools in the same grade span adjusted by the population density of the zip code of the focal school."
+
+There is some ambiguity about what "adjusted by the population density" means, as well as "in the same grade span" (are K-8 schools counted as elementary schools, middle schools or both)? To simplify things, we can start by looking at the high schools to figure out the density adjustment, then turn to the more complex ES/MS/K-8 dataset.
+
+First some code to load packages in R, setting the data directory and loading the main school list for RAI. Lee Newcomer School is removed from the analysis since it was already merged with Lau, leaving 101 schools.
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(tidygeocoder)
+library(sf)
+
+data_dir <- "rai_metrics_july2024"
+
+schlist <- read.csv(file.path(data_dir, "RAI School List.csv")) %>% 
+    filter(!str_detect(FULLNAME, "Lee"))
+```
+
+Fix some street names and query a geocoding service to convert the addresses into geographical coordinates.
+
+```{r, cache = TRUE}
+schlist$ADDRESS <- str_replace_all(schlist$ADDRESS,
+                                   c("Pomona Ave" = "Pomona St", "Broadway St" = "Broadway"))
+schlist <- mutate(schlist, addr_full = paste(ADDRESS, City, State, sep = ", "))
+school_coords <- geocode(schlist, address = addr_full)
+school_coords <- st_as_sf(school_coords, coords = c("long", "lat"), crs = 4326)
+```
+Select only high schools, calculate the distance matrix and convert to miles.
+
+```{r}
+coords_high <- filter(school_coords, SCHLEVEL == 4)
+dists_high <- st_distance(coords_high)
+units(dists_high) <- "mi"
+```
+
+Define a function to calculate the distance to nearest three schools and apply it to the matrix. Note that two of the high schools (Ruth Asawa School of the Arts and The Academy @ McAteer) share the same address. I made the choice to *not* count themselves as each other's neighbor with distance 0, but they still count as two neighbors for other nearby schools. I did try the alternative calculations and will comment on it at the end.
+
+```{r}
+mean_dist3 <- function(dist_mat) {
+    res <- apply(dist_mat, 1, function(x) mean(sort(x[x > 0])[1:3]))
+    units(res) <- units(dist_mat)
+    data.frame(mean_dist3 = res)
+}
+
+dist3_high <- cbind(coords_high, mean_dist3(dists_high))
+```
+
+Although the description of the metric above appears to refer to the population density of the ZIP codes, the files obtained from SFUSD also include a calculation of the density of SFUSD students per ZIP code. We will therefore include this data as well. Much of the code below serves to match the school names in the student density spreadsheet to the main dataset, as it lacks school IDs.
+
+```{r}
+dens <- read_excel(file.path(data_dir, "A1 Addendum - Student Density Calculation.xlsx"))
+
+# data is missing school IDs, so taking the first word of the school name
+#  (minus very common words) to try to match the two lists
+match_names <- schlist$FULLNAME %>% 
+    str_replace("^SF |The |New |El ", "") %>%
+    str_split(" ") %>% 
+    map_chr(1) %>% 
+    str_replace_all(c("Chin$" = "Chin ", "Wo" = "Wo "))
+
+dens$`School Name` <- str_replace(dens$`School Name`, "á", "a")
+
+match_matrix <- outer(dens$`School Name`, match_names, FUN = str_detect)
+
+# remove ambiguous matches
+dup_matches <- outer(rowSums(match_matrix) > 1, colSums(match_matrix) > 1, "&") 
+match_matrix <- match_matrix & !dup_matches
+match_col <- apply(match_matrix, 1, function(x) which(x)[1])
+# fill in missing values manually
+match_col[c(39,52,53,58,59,74,83,90,92,93)] <- c(71,86,31,36,87,100,25,90,60,76)
+dens$SCHNO <- schlist$SCHNO[match_col]
+dens <- inner_join(dens, select(schlist, SCHNO, FULLNAME))
+
+dist3_high <- dist3_high %>% 
+    inner_join(select(dens, SCHNO, dens_students = `Enrolled Student Density (students/sqaure mile)`))
+```
+Finally, we add the overall population density (population / area) of the ZIP codes.
+
+```{r}
+zip_codes <- read_excel(file.path(data_dir, "A1 Addendum - Student Density Calculation.xlsx"),
+                        sheet = "Square Miles of Zip")
+colnames(zip_codes) <- c("ZIPCODE", "area", "pop")
+zip_codes <- mutate(zip_codes, pop = as.numeric(str_replace(str_sub(pop, 3), ",", ""))) %>% 
+    mutate(dens_pop = pop / area)
+
+dist3_high <- inner_join(dist3_high, zip_codes)
+
+rai_scores <- read.csv("rai_scores.csv")
+dist3_high <- inner_join(dist3_high, select(rai_scores, SCHNO = schno, sch_acc))
+```
+The graphs below show the published school access score (*y* axis) vs. the mean distance to the three nearest high schools (*x* axis), with the overall population density or the student density shown as the size of the points. 
+
+Even without knowing the exact formula for the density adjustment, we would expect that schools in more dense ZIP codes would have a higher score than expected from the distance (above blue line), and schools in less dense ZIP codes would be under the line. For the overall population density (top graph), the schools with the highest ZIP density (Galileo, top right) and lowest density (Marshall, small point down the middle) match this expectation, but the rest is inconsistent. For example, the second highest density is for Wallenberg, and that point (around 1.3 mi in mean distance) is below the line. When considering student density (bottom graph), there is even less of a match between the density and position relative to the line. So it's more likely that the overall population density was used, but specific scores remain difficult to explain.
+
+ 
+```{r}
+units(dist3_high$mean_dist3) <- NULL
+
+ggplot(dist3_high, aes(x = mean_dist3, y = sch_acc)) +
+    labs(x = "Mean distance to three nearest (mi.)", y = "School access score",
+         size = "ZIP pop. dens.") +
+    geom_point(aes(size = dens_pop)) +
+    geom_smooth(method = "lm", se = FALSE) +
+    theme_bw()
+
+ggplot(dist3_high, aes(x = mean_dist3, y = sch_acc)) +
+    labs(x = "Mean distance to three nearest (mi.)", y = "School access score",
+         size = "ZIP student dens.") +
+    geom_point(aes(size = dens_students)) +
+    geom_smooth(method = "lm", se = FALSE) +
+    theme_bw()
+```
+
+Finally, regarding the Asawa / Academy colocation: it seems correct to not count them as each other's neighbor, since their point ends up on the blue line. Counting them as one school when calculating the other schools' mean distance does not seem to help in terms of addressing the inconsistencies in the graphs above.
