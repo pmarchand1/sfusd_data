@@ -21,7 +21,13 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 This page reproduces some of the calculations that went into the composite score used to rank SFUSD schools for closures / mergers. The official description of how this score was calculated can be found in the [Composite score primer](https://drive.google.com/file/d/1hYPK932n-HWLnhpx3qQIXCh9RtBsLUjZ/view?usp=sharing) published by SFUSD. 
 
-The calculations here are based on data obtained through a Public Records Act request in July 2024, and for now they only cover the criteria in the "Efficiency" portion of the score. Three of the four criteria calculated appear to match official numbers (see last section), but the calculations involved in arriving at the same result show potential sources of errors.
+The calculations here are based on data obtained through a Public Records Act request in July 2024, and for now they only cover the criteria in the "Efficiency" portion of the score. Three of the four criteria calculated appear to match official numbers (see last section), but the calculations involved in arriving at the same result show potential sources of errors: 
+
+- the imputed "family demand" for schools that are not part of the lottery puts them at a high rank due to the skewed distribution of the demand data;
+
+- the wrong capacity appears to have been used for most of the K-8 schools;
+
+- the building condition value was not averaged for all multi-campus schools as stated, but it appears only one of the two campuses was selected.
 
 This said, I would not focus too much on the specific issues raised here, as these criteria are not even the most determinant for the final score. They were just the easiest ones to reproduce with available data.
 
